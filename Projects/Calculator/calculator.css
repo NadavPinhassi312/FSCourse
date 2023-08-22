@@ -1,0 +1,26 @@
+html {
+    height: 100%;
+}
+body{
+    height: 100%;
+    margin:0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
+    background: radial-gradient(white, black);
+    
+    display: flex;
+    vertical-align:middle;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    
+}
+
+.frame{
+    border:1px solid black;
+    height:850px; 
+    width:25%; 
+    background-color:brown;
+    margin: 0 auto;
+}
