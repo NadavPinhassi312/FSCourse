@@ -1,0 +1,49 @@
+.box{
+    width:100px;
+    height:100px;
+    left:0;
+    top:0;
+    background-color: rgba(137, 255, 249, 0.582);
+    
+    position:fixed;
+    
+    animation-name:box;
+    animation-duration:5s;
+    animation-delay:0s;
+    animation-iteration-count: 2;
+    animation-direction: alternate;
+    animation-timing-function:ease-in-out;
+} 
+@keyframes box {
+    0%{
+        left:0;
+        top:0;
+    }
+    25%{
+        left:0;
+        top:calc( 100% - 100px);
+    }
+    50%{
+        left:calc( 100% - 100px);
+        top:calc( 100% - 100px);
+    }
+    75%{
+        left:calc( 100% - 100px);
+        top:0;
+    }
+    100%{
+        left:0;
+        top:0;
+
+    }
+}
+
+/* 25%{
+        top:85%;
+    }
+    50%{
+        left:85%;
+    }
+    75%{
+        top:-85%;
+    } */

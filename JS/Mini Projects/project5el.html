@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        Background Color:
+        <span>
+            <input type="text" class="bgColor">
+        </span>
+    </div>
+    <div>
+        Text Color:
+        <span>
+            <input type="text" class="textColor">
+        </span>
+    </div>
+    <div>
+        Font Size:
+        <span>
+            <input type="text" class="fontSize">
+        </span>
+    </div>
+    
+    
+    
+    <script>
+        var bgColor=document.querySelector(".bgColor");
+        var textColor=document.querySelector(".textColor");
+        var fontSize=document.querySelector(".fontSize");
+        var body=document.querySelector("body");
+
+        bgColor.addEventListener('keyup',function(event){
+            body.style.backgroundColor=event.target.value;
+        })
+        textColor.addEventListener('keyup',function(event){
+            body.style.color=event.target.value;
+        })
+        fontSize.addEventListener('keyup',function(event){
+            body.style.fontSize= event.target.value + "px" ;
+            if  (event.target.value==""){
+                body.style.fontSize="16px";
+            }
+        })
+        // fontSize.addEventListener('keydown',function(event){ 
+            
+        // })
+    </script>
+</body>
+
+</html>

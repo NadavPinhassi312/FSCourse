@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal Projcet</title>
+    <style>
+        body{
+            margin:0;
+            padding:0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .btn{
+            display: block;
+            margin:40px auto;
+            font-size: 40px;
+            border-radius:10px;
+            padding:10px;
+        }
+        .btn:hover{
+            background-color: rgb(245, 226, 226);
+            box-shadow: 0px 0px 10px 2px;
+        }
+        .btn:active{
+            background-color: rgb(205, 192, 255);
+        }
+        .modalCont{
+            display:none;
+            position:fixed;
+            padding-top: 100px; 
+            left: 0;
+            top: 0;
+            width:100%;
+            height:100%;
+            background-color: rgba(0,0,0,0.3);
+            z-index: 1;
+        }
+        .modalWindow{
+            position:relative;
+            width:40%;
+            height:250px;
+            margin:100px auto;
+            opacity:1;
+            z-index: 2;
+            background-color:white;
+            -webkit-animation-name: animatetop;
+            -webkit-animation-duration: 0.5s;
+            animation-name: animatetop;
+            animation-duration: 0.5s
+        }
+        @-webkit-keyframes animatetop {
+        from {top:-300px; opacity:0} 
+        to {top:0; opacity:1}
+        }
+
+        @keyframes animatetop {
+        from {top:-300px; opacity:0}
+        to {top:0; opacity:1}
+        }
+        .close{
+            /* border:1px solid black; */
+            float: right;
+            font-size:25px;
+            margin:5px 10px;
+        }
+        .close:hover{
+            color:white;
+            cursor:default;
+        }
+        /* .close:active{
+
+        } */
+        
+        .modalTitle{
+            padding:30px 20px;
+            background-color: rgb(87, 255, 87);
+        }
+        .modalText{
+            padding:20px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <button class="btn">Open Modal</button>
+        <div class="modalCont">
+            <div class="modalWindow">
+                <span class="close">
+                    &times;
+                </span>
+                <div class="modalTitle">
+                    Title
+                </div>
+                <div class="modalText">
+                    <p>Content</p>
+                    <p>More content</p>
+                </div>
+            </div> 
+        </div>
+    </div>
+
+    <script>
+        var body=document.querySelector("body");
+        var btn=document.querySelector(".btn");
+        var close=document.querySelector(".close");
+        var mdlCont=document.querySelector(".modalCont")
+
+        class Modal{
+            constructor(){
+                this.modal=document.querySelector(".modalCont");
+                
+            }
+            open(){
+                this.modal.style.display="block";
+            }
+            close(){
+                this.modal.style.display="none";
+            }
+            changeContent(title,text){
+                if (title!==undefined){
+                    this.modal.querySelector(".modalTitle").innerHTML=title;
+                }
+                if (text!==undefined){
+                    this.modal.querySelector(".modalText").innerHTML=text;
+                }
+            }
+        }
+        btn.addEventListener('click',function(event){
+            modal.open();
+        });
+        close.addEventListener('click', function(event){
+            modal.close();
+        });
+        window.addEventListener("click", function(event){
+            if(event.target==mdlCont){
+                modal.close();
+            }
+        });
+        
+        var modal=new Modal();
+        modal.changeContent("sdefvsdf","aegvdrfebvgdsf");
+
+        
+    </script>
+</body>
+</html>

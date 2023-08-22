@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Project</title>
+    <style>
+        .titleContainer{
+            margin:0 auto;
+            text-align:center;
+        }
+        .title{
+            display:inline-block;
+            /* margin:40px; */
+            font-size:32px;
+        }
+        .letter{
+            display: inline-block;
+            transition: all 200ms ease-in-out;
+        }
+        .letter.active{
+            transform: scale(3);
+            rotate:25deg;
+            color:orange;
+            
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="titleContainer">
+        <h1 class="title"></h1>
+    </div>
+</body>
+<script>
+    var title=document.querySelector(".title");
+    var inputTitle=prompt("Enter a title:");
+    var arrTitle=inputTitle.split("");
+    
+    for (i=0;i<arrTitle.length;i++){
+        if (arrTitle[i]!=" "){
+            title.innerHTML=title.innerHTML+`<span class='letter'>${arrTitle[i]}</span>`;
+        }
+        else{
+            title.innerHTML=title.innerHTML+`<span>${arrTitle[i]}</span>`;
+
+        }
+    }
+    title.addEventListener("mouseover",(event)=>{
+        event.target.classList.add("active");
+
+        
+        
+    });
+    title.addEventListener("mouseout",(event)=>{
+        event.target.classList.remove("active");
+    });
+
+    
+    
+    
+    
+    
+</script>
+</html>

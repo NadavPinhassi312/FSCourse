@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guessing Game Project</title>
+</head>
+<body>
+    <div>
+        <div>Enter a number between 1 to 10:</div>
+        <div>
+            <input type="text" class="textbox">
+        </div>
+        <button class="btn">Take a Guess</button>
+        <div class="yesOrNo"></div>
+    </div>
+
+    <script>
+        var num=document.querySelector(".textbox");
+        var btn=document.querySelector(".btn");
+        var answer=document.querySelector(".yesOrNo");
+        btn.addEventListener('click',function(event){  
+            // console.log(num.value);
+            if (num.value==7){
+                // console.log("works");
+                answer.innerHTML="You did it!";
+            }
+            else {
+                answer.innerHTML="That's not it, keep going";
+                
+            }
+        });
+
+        // btn.addEventListener('click',function(clickCounter){
+        //     var totalClicks=0;
+        //     totalClicks=totalClicks+1;
+        //     console.log(totalClicks);
+        // });
+    </script>
+</body>
+</html>

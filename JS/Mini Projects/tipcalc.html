@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tip Calculator</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            margin:0 auto;
+            padding:0;
+        }
+        h1{
+            margin:20px;
+        }
+        .box{
+            margin:100px auto;
+            width:700px;
+            height:500px;
+            background-color: hsl(183, 81%, 77%);
+            border-radius:10px;
+            padding:20px;
+            
+        }
+        .container{
+            display:flex;
+            margin:20px;
+            flex-wrap: wrap;
+        }
+        .left{
+            flex-basis:50%;
+            flex-grow:1;
+            flex-shrink:0;
+            padding-top:10px;
+            /* border:1px solid red; */
+        }
+        .right{
+            flex-basis:50%;
+            flex-grow:0;
+            flex-shrink:0;
+            /* border:1px solid blue; */
+        }
+        .text{
+            margin:20px 0 40px;
+        }
+        .input{
+            margin:20px 0;
+            /* width:100%; */
+        }
+        .taskInput{
+            width:100%;
+            box-sizing: border-box;
+            height:40px;
+            padding:10px;
+            border-radius: 8px;
+        }
+        .press{
+            background-color: rgb(68, 68, 255);
+            color:white;
+            height:30px;
+            border-radius: 8px;
+            border:none;
+            font-size:20px;
+            padding:5px;
+            height:auto;
+        }
+        .finalText{
+            margin:0 auto;
+            margin-top:20px;
+        }
+        .totalBillText, .tipText{
+            display:block;
+            margin:10px;
+            font-size:30px;
+            text-decoration: underline;
+            
+
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>Tip Calculator</h1>
+        <div class="container">
+            <div class="left">
+                <div class="text">
+                    Bill amount (in dollars):
+                </div>
+                <div class="text">
+                    Tip amounnt (as a %):
+                </div>
+            </div>
+            <div class="right">
+                <div class="input">
+                    <input type="text" class="taskInput billInput" value="">
+                </div>  
+                <div class="input">
+                    <input type="text" class="taskInput tipInput" value="">
+                </div>  
+                <button class="press" onclick="calc()">Calculate Tip and Total Bill</button>
+            </div>
+            <div class="finalText">
+                <div class="tipText">Total Tip: </div>
+                <div class="totalBillText">Total Bill: </div>   
+            </div>
+            
+            
+        </div>
+    </div>
+    
+    <script>
+        function calc(){
+            var bill=document.querySelector(".billInput");
+            var billValue=Number(bill.value);
+            var tip=document.querySelector(".tipInput");
+            var tipValue=Number(tip.value);
+            // console.log(billValue);
+            // console.log(tipValue);
+            totalTip=billValue * (tipValue*0.01);
+            console.log(totalTip)
+            var tipText=document.querySelector(".tipText");
+            var totalBillText=document.querySelector(".totalBillText");
+            if (tipText.innerHTML=="Total Tip: " && totalBillText.innerHTML=="Total Bill: "){
+                tipText.innerHTML=tipText.innerHTML+totalTip+"$";
+                var totalBill=billValue+totalTip;
+                totalBillText.innerHTML=totalBillText.innerHTML+totalBill+"$";
+            }
+            
+            
+
+        }
+
+    </script>
+</body>
+</html>

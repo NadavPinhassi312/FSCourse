@@ -1,0 +1,320 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    
+</head>
+<body style="padding:5px 20px;">
+    <h1>Headline headline headline</h1>
+    <div class="blue">text text text</div>
+
+
+    
+    <script>
+
+        
+        /*
+        ----------Manipulating HTML with JS----------
+        var test=document.getElementById("test"); - "test" is the ID of the HTML object
+        oldTitle=test.innerHTML;
+        test.innerHTML="New Title";
+        console.log(oldTitle);
+        
+        var str="string string string";
+        var num=123;
+        var combined=""+str+""+num+"";
+        console.log(combined);
+        var title=document.getElementById("test");
+        title.innerHTML=combined;
+
+        ----------String Manipulation----------
+        
+        str.toUpperCase() - Transforms the string to uppercase.
+        str.toLowerCase() - Transforms the string to lowercase.
+        str.substr(from,to) - forms a substring from the inserted string.
+        str.split(" ") - forms an array, the objects are words from the string split by the char in the parentheses.
+        arr.join() - forms a string which joins the objects from the given array. 
+        arr.slice(from, to) - returns a sub-array.
+        
+        ----------Accepting user input via prompt()----------
+        var name=prompt("Please enter your name:", "Nadav");
+        var sentence=document.getElementById("test");
+        sentence.innerHTML="Welcome back "+name+"!";
+        
+        ----------Arrays----------
+        var arr=[a,b,c]
+        arr.length - return the length of the array
+        arr.push(value) - adds the value at the end of the array
+        var newArr=arr.slice(x,y) - returns a new array cut from x to y-1
+        lastObject=arr.pop() - returns the last item from the array and delets it from the original one
+
+        ----------Type Casting----------
+        num="123";
+        num=Number(num); //turns the string "123" into the number 123.
+
+        ----------Functions----------
+        function funcName(){
+            actions;
+        }
+        function id(id){
+            return document.getElementById(id); - 
+        }
+
+        function tip(total,percent) {
+            realPercent=(percent/100)+1;
+            return total*realPercent;
+        }
+        console.log(tip(100,100))
+
+        ----------Query Selectors----------
+        var str=ducument.quertSelector(".class"/"#id"/"element")
+
+        var   parent=document.querySelector(".class"/"#id"/"element")
+        var child=parent.querySelector(".class"/"#id"/"element") - Lets you interact with a specific child element  
+        var objecs = document.querySelectorAll(".class"/"#id"/"element") - Lets you select all of the objects with the given value 
+
+        var lis = document.querySelectorAll("li");
+        lis[0].innerHTML="Number "+lis[0].innerHTML; - Manipulating the 1st node inside the array (the list)
+        
+        <input type="text" style='padding:30px;font-size:30px;' class="className" value="Hello World blah blah blah">
+        var input=document.querySelector(".className");
+        console.log(input.value); - will show "Hello World blah blah blah" in the console
+
+        ----------Anonymous Functions----------
+        A function that's stored in a variable.
+        var funcName=function(){
+            return value; 
+        }
+        This allows for a function to be used as a variable.
+
+        ----------IIFE (Immediately Invoked Function Expression)----------
+        A function that runs automatically. Example:
+        (function func(){
+            console.log("sdgffd");
+            alert("sdfgsdfbg");
+        })(); 
+
+        ----------this----------
+        function showName(name){
+            this.name=name;
+            this.excla=name+"!";
+            this.firstThree=name.substring(0,3);
+            return this;
+        }   
+        showName("12345").firstThree - "123"
+
+        ----------Hoisting----------
+        function func(){
+            action(num);
+            anotherAction(num);
+            var num;
+            num=123;
+        }
+        Hoisting means the variable "num" gets defined at the beginning of the function, but the value is undefined until it is defined by the user. 
+
+        ----------Event Listeners----------
+        var btn=document.querySelector(".class");
+        btn.addEventListener('click',function(clickCounter){
+            var totalClicks=0;
+            totalClicks=totalClicks+1;
+            console.log(totalClicks);
+        });
+        
+        ----------Getting Input Values----------
+        var input=document.querySelector(".inputField");
+        var text=document.querySelector(".inputText");
+        input.addEventListener('keyup',function(event){
+            console.log(input.value);
+            text.innerHTML=event.target.value; //event is the function, it's looking for its target and then looking for its value.
+        })
+        
+        ----------Changing CSS with Event Listeners----------
+        var input=document.querySelector(".inputField");
+        var body=document.querySelector("body");
+        input.addEventListener('keyup',function(event){
+            body.style.backgroundColor=event.target.value; 
+        }) 
+
+        ----------Objects----------
+        var objectName={
+            "key":"value",
+            "key":"value2"
+        }
+
+        var me={
+            "name":"Nadav", //Property
+            "dog":"Shpits",
+            "guitars":"yes",
+            drums(){ //Method
+                alert("badum tss");
+            }
+        }
+        me.water="thirsty"; //add a new property 
+
+        ----------For Loops----------
+        for (var i=0;i<10;i++){
+            console.log(i);
+        }
+
+        ----------While Loops----------
+        While (bool){
+            do actions;
+        }
+
+        var ul=document.querySelector(".js-list");
+        var html="";
+
+        var num=Number(prompt("Enter a number:"));
+        var startingNum=1;
+        while(startingNum<=num){
+            html=html+"<li>Iterations: "+startingNum+"</li>"; //Add elememts using JS!
+            startingNum++;
+        }
+        ul.innerHTML=html;
+
+        ----------For Each----------
+        var numbers=[1,2,3,4];
+        for(var i = 0;i<numbers.length;i++){
+            console.log(numbers[i]);
+        }
+
+        numbers.forEach(function(number,index) {
+            console.log(number);
+        })
+
+        SAME THING!
+
+        ----------Classes - Object Oriented Programming(OOP)----------
+        class Person{
+            constructor(name,age,hobby){
+                this.name=name;
+                this.age=age;
+                this.hobby=hobby;
+            }
+            fun(){
+                console.log(this.name+"'s hobby is "+this.hobby)
+            }
+            paint(){
+                var color=prompt("What color do you want the background to be?");
+                var body=document.querySelector("body");
+                body.style.backgroundColor=color;
+                body.innerHTML=color;
+            }
+        }
+
+        // var nadav=new Person("Nadav",22,"baking");
+        // nadav.paint();
+        
+        ----------Extending Classes----------
+
+        class israeli extends Person{
+            constructor (name,age,hobby){
+                super(name,age,hobby);
+                this.language="Hebrew";
+            }
+            askCity(){
+                var city=prompt("Where do you live?");
+                this.city=city;
+                console.log("You live in "+this.city);
+                return this;
+            }
+
+            whatLanguage(){
+                console.log("This person speaks "+this.language);
+                return this;
+            }
+
+        }
+        const nadav=new israeli("Nadav",22,"Music");
+        nadav.askCity().whatLanguage();
+
+        ----------Template Literals----------
+        var name="Nadav";
+        console.log("Hey, my name is "+name);
+        console.log(`Hey, my name is ${name}`);
+
+        SAME THING!
+        
+        ----------Destructuring Arrays and Objects----------
+        arr=[1,2,3,4,5,6,7];
+        var [first,second,third,...restOfTheArr]=arr;
+        console.log(first);
+        console.log(second);
+        console.log(third);
+        console.log(restOfTheArr)
+
+        var me={
+            "name":"Nadav",
+            "age":22,
+            "cats":2,
+            "hobby":"music",
+            "dog":"shpits",
+
+
+        }
+        let  {name,
+              age,
+              cats:numOfCats, //Change variable name from the one in the object
+              ...rest
+             } = me;
+        console.log(name,age,numOfCats,rest);
+        
+        ----------Timeouts----------
+        setTimeout (function(){
+            console.log("dsfgdf");
+        },1000)
+        Or:
+        function wait(){
+            console.log("waited 2 seconds");
+        }
+        setTimeout(wait,2000);
+
+        ----------Intervals----------
+        var logger = setInterval(function() {
+            console.log("console.log");
+        }, 1000);
+        
+        setTimeout(function(){
+            clearInterval(logger);
+        },5100);
+
+        ----------Arrow Functions----------
+        hello = (name) => `Hello ${name}`
+
+        console.log(hello("Nadav"));
+
+        ----------Adding and Removing CSS Classes----------
+        const h1=document.querySelector("h1");
+        h1.classList.add("red");
+        const div=document.querySelector("div");
+        div.classList.remove("blue");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        */
+
+        
+    </script>
+</body>
+ 

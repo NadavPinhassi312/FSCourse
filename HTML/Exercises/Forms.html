@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+    <style>
+        body{
+            background-color:plum;
+        }
+        h1 {
+            text-align: center;
+        }
+        .name{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1><u>Welcome to my Form Practice!</u></h1>
+    </header>
+    <p>
+        <u><h2>Input Methods:</h2></u>
+        <form method="get" action="../Projects/pets.html">
+            <div>
+                Username:<input type="text" name="username" placeholder="Enter username here">
+            </div>
+            <div>
+                Checkbox: <input type="checkbox" name="checkbox">
+            </div>
+            <div>
+                Radio Button:
+                <input type="radio" name="radio_text">1
+                <input type="radio" name="radio_text">2
+                <input type="radio" name="radio_text">3
+            </div>
+            <div>
+                Date <input type="date"name="date">
+            </div>
+            <div>
+                Hidden: <input type="hidden" name="Hidden">
+            </div>
+            <div>
+                Number: <input type="number" name="number" step="1" min="1" max="10" placeholder="Enter said number" width="1000">
+            </div>
+            <div>
+                Password: <input type="password" name="password" placeholder="Enter password here">
+            </div>
+            <div>
+                File Upload: <input type="file" name="file">
+            </div>
+            <div>
+                <input type="submit" value="Submit Information">
+            </div>
+        </form>
+    </p>
+    <hr>
+    <p>
+        <u><h2>Text Area:</h2></u>
+        <form method="GET" action="">
+            <textarea
+            placeholder="Write your text here"
+            cols="50"
+            rows="20"
+            required
+            name="textarea"
+            class=""
+            minlength="5"
+            maxlength="100"
+            autofocus></textarea><br>
+            <button type="submit">Submit Info</button>
+        </form>
+    </p>
+    <hr>
+    <p>
+        <u><h2>Dropdown Menu:</h2></u>
+        <form method="get"action="../Projects/pets.html">
+            <select id="" class="" name="selected_item" required>
+                <option value="" disabled selected>--Please Pick Option--</option>
+                <option value="option_1">Option 1</option>
+                <option value="option_2">Option 2</option>
+                <option value="option_3">Option 3</option>
+            </select>
+            <button type="submit">SUBMIT</button>
+        </form>
+    </p>
+    <hr>
+    <p>
+        <u><h2>Video</h2></u>
+        <video width="1000" height="auto" controls="controls" title="Bunny Video">
+            <source src="../bunny.mp4" type="video/mp4">
+            Your browser does not support the video.
+        </video>
+    </p>
+    <hr>
+    <p>
+        <u><h2>Audio</h2></u>
+        <audio controls>
+            <source src="../Audio/audiosource.mp3" type="audio/mpeg" >
+            You have an old browser
+        </audio>
+    </p>
+    <hr>
+    <p>
+        <h1>WILL THE TEXT BE ALIGNED?</h1>
+        Sure will.
+        <p class="name">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium quisquam incidunt necessitatibus perferendis exercitationem quo impedit, molestias dolore tempore dolores corporis ut eveniet iste eligendi iusto qui eius? Aliquam, culpa.
+        </p>
+    </p>
+</body>
+</html>

@@ -1,0 +1,85 @@
+body{
+    width:90%;
+    margin:0 auto;
+    
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    /* background-image: url(../Projects/Pictures/coding.jpg); */
+    background-color: rgb(248, 248, 248);
+}
+/* #body{
+    background-color: rgb(248, 248, 248);
+} */
+#nav-container{
+    border-bottom:1px solid black;
+    margin-bottom:30px;
+    /* height:30px; */
+    /* border:1px dashed blue; */
+
+}
+.nav{
+    padding-left:0;
+    /* border:1px solid red; */
+    margin-right:20px;
+}
+.nav>li{
+    display: inline-block;
+    margin-left:0;
+    border:1px solid black;
+    color:black;
+    margin-right:20px;
+    background-color: rgb(218, 218, 218);
+    
+}
+.nav>li:hover{
+    background-color: rgb(0, 86, 161);
+}
+.nav>li>a{
+    color: rgb(71, 71, 71);
+    text-decoration: none;
+    padding:10px;
+}
+.nav>li>a:hover{
+    color:white;
+}
+
+#nav-title{
+    display:none;
+}
+nav{ /*The Headline*/
+    font-size: 50px;
+    text-align: center;
+    margin: 10px 0 30px 0;
+    
+}
+
+.row{
+    border-top:1px solid black;
+    position: relative;
+    width:100%;
+    padding:10px;
+    background-color: lightblue;
+}
+.col1,.col2,.col3{
+    display: inline-block;
+    
+    padding:5px;
+}
+.col1{
+    float: left;
+}
+.col3{
+    float:right;
+}
+.col2{
+    /* margin-left:25%; */
+    position:relative;
+    left:26%;
+}
+
+.full-col{
+    text-align: center;
+    padding:5px;
+    margin:5px;
+    background-color: lightgrey;
+    border:1px solid black;
+}

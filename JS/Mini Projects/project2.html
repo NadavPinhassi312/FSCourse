@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project #2</title>
+</head>
+<body style="padding:40px;">
+    <p id="headline" style="font-size: 40px;">
+        The link is:
+        <span id="link">
+
+        </span>
+
+    </p>
+    
+    <!-- <a href="url.com">vdevde.com</a> -->
+    <script>
+        var url = prompt("Enter URL:");
+        var subURL= url.slice(0,8);
+        var headline=document.getElementById("headline");
+        if (subURL!="https://") {
+            url="https://"+url;
+        }
+        var link=document.getElementById("link");
+        link.innerHTML="<a href='" + url + "'>" + url + "</a>";
+    </script>
+</body>
+</html>

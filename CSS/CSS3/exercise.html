@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheet.css">
+    <title>CSS3</title>
+</head>
+
+<body>
+    <header>
+        CSS3 Exercise Page
+    </header>
+    <div id="main">
+        <div class="lesson">
+            <h3>Rounding Corners</h3>
+            <div class="title">Well, first time it's OK to round corners!</div>
+            <div class="round"></div>
+            <img src="../CSS3/Pictures/999239.jpg" alt="This should be a round image" class="round">
+            <img src="../CSS3/Pictures/Walking_tiger_female.jpg" alt="This should be a round image" class="round">
+            <div class="round specificrounding"></div>
+        </div>
+        <div class="lesson">
+            <h3>Background Sizes</h3>
+            <div class="title">Cover:</div>
+            <div class="picture cover"></div>
+            <div class="title">Contain:</div>
+            <div class="picture contain"></div>
+            <div class="title">Exact Dimentions:</div>
+            <div class="picture dimentions"></div>
+            <div class="title">Layered Background Images:</div>
+            <div class="layers"></div>
+        </div>
+        <div class="lesson">
+            <h3>New Color Properties</h3>
+            <div class="title">RGBA (Transparent Text):</div>
+            <p class="rgba">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea et veritatis hic laudantium. Illo, cumque explicabo reiciendis, tempora aliquam distinctio reprehenderit sit enim animi atque quia repellendus quas, pariatur unde!
+            </p>
+            <div class="title">HSL (Hue, Saturation, Lightness):</div>
+            <p class="hsl">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit voluptatem rem eveniet optio suscipit alias dolorum, magni tempora iusto blanditiis harum. Non inventore odio explicabo ratione ut officia, illum molestiae?
+            </p>
+            <div class="title">Opacity vs. Alpha (color:white;background-color:black) </div>
+            <div class="opabox opacity">Opacity - selects everything.</div>
+            <div class="opabox alpha">Alpha - can be applied to specific elements, alot more individual.</div>    
+        </div>
+        <div class="lesson">
+            <h3>Gradients</h3>
+            <div class="title">Linear Gradients:</div>
+            <div class="box grad"></div>
+            <div class="box gradleftright"></div>
+            <div class="box gradiagonal"></div>
+            <div class="box deg"></div>
+            <div class="box transp"></div>
+            <div class="title">Radial Gradient: (Write "circle" before the colors to make it a perfect circle)</div>
+            <div class="bigbox radgrad"></div>
+            <div class="bigbox repradgrad"></div>
+        </div>
+        <div class="lesson">
+            <h3>Shadows</h3>
+            <div class="title">Text Shadows:</div>
+            <div class="textshadow">Text Shadow</div>
+            <div class="title">Box Shadows:</div>
+            <div class="boxshadow"></div>
+            <div class="boxshadow inset"></div>
+        </div>
+        <div class="lesson">
+            <h3>Text Formatting</h3>
+            <div class="title">Clip and Ellipsis:</div>
+            <div class="text-area clip">clip clip clip clip clip clip clip clip clip clip clip clip </div>
+            <div class="text-area ellipsis">ellipsis ellipsis ellipsis ellipsis ellipsis ellipsis ellipsis ellipsis </div>
+            <div class="title">Word Wrap:</div>
+            <div class="text-area-no-word-wrap">Word wrap comes into actiom when you have an outstandingly long word. Without it, the word will break outside the box, like so:  aifbvgsdfkbvgkstbdfnbvkjnsdgfbkrtb</div>
+            <div class="text-area-word-wrap">But with word wrap even when the word is longer than its boundaries it won't break, only drop a line and stay in the defined width: aeodrbgvsekthbgvsrtkbgnskrjtbnkjsrtgbnkrts</div>
+            <div class="title">Word Break:</div>
+            <div>Keep all: (Allows the paragraph to keep the word unbroken. can be silghtly altered with word-wrap:break word).</div>
+            <div class="word-break-keep-all">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut at dicta voluptate? Repudiandae, similique soluta! aeisrkvbdrjesbvhhksrebdhfjsbkhsrdfbvkh</div>
+            <div>Break all: (lines can break between any 2 letters)</div>
+            <div class="word-break-break-all">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut at dicta voluptate? Repudiandae, similique soluta! aeisrkvbdrjesbvhhksrebdhfjsbkhsrdfbvkh</div>
+            <div>Text Align Last (aligns the last line in a paragraph)</div>
+            <div class="textbox textalignlast">Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, ab, ea totam nostrum quae ut mollitia laborum placeat illum aspernatur accusamus enim modi, explicabo pariatur?</div>
+            <div>Costum Fonts:</div>
+            <div class="costumfont">
+                In order to do this you download a font, specify a folder for it and do the font-face thingy in the stylesheet.
+            </div>
+        </div>
+        <div class="lesson">
+            <h3>Transitons</h3>
+            <div class="title">Transitioning Sizes</div>
+            <div class="transize">Hover over me!</div>
+            <div class="title">Transitioning Colors</div>
+            <a href="https://facebook.com" class="trancolor" target="_blank">Facebook</a>
+            <div class="title">Transition Timing Function</div>
+            <div>Linear:</div>
+            <div class="parent">
+                <div class="child linear"></div>
+            </div>
+            <div>Ease In:</div>
+            <div class="parent">
+                <div class="child ease-in"></div>
+            </div>
+            <div>Ease Out (with delay):</div>
+            <div class="parent">
+                <div class="child ease-out"></div>
+            </div>
+        </div>
+        <div class="lesson">
+            <h3>Transformation</h3>
+            <div class="title">Translate (2D Transformation)</div>
+            <div class="translatebox"></div>
+            <div class="title">Rotate</div>
+            <div class="rotatebox">Watch me do a spin</div>
+            <div class="title">Scale</div>
+            <div class="scalebox">Watch me expand</div>
+            <div class="title">Skew</div>
+            <div>Skew X:</div>
+            <p class="skewX">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim ad nostrum aliquam nihil deserunt corporis. Ullam vitae cupiditate quia mollitia deleniti cumque qui dignissimos velit.</p>
+            <div style="margin-bottom:45px;">Skew Y:</div>
+            <p class="skewY">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim ad nostrum aliquam nihil deserunt corporis. Ullam vitae cupiditate quia mollitia deleniti cumque qui dignissimos velit.</p>
+            <div class="title">Multiple Transformations</div>
+            <div class="multitrans">Multiple Transformations</div>
+        </div>
+        <div class="lesson">
+            <h3>Animations</h3>
+            <button onClick="window.location.reload();" class="refresh" title="Refresh Page">Refresh Page</button>
+            <div class="title">My First Animation</div>
+            <div class="boxAnimation"></div>
+            <div class="title">Blinking Animation</div>
+            <div class="blinkAnimation"></div>
+            <div class="title">Animation Iteration Count</div>
+            <div class="iterations"></div>
+            <div class="title">Animation Direction</div>
+            <div class="directions"></div>
+            <div class="title">Animation Timing Function</div>
+            <div class="timeFunc"></div>
+        </div>
+        <div class="lesson">
+            <h3>Misc.</h3>
+            <div class="title">Columns</div>
+            <div class="columns">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed commodi iusto voluptatibus maiores saepe accusamus placeat voluptatem quam eum ipsa quaerat corporis, ex tempore itaque facilis nisi rerum aliquam. Ea asperiores repudiandae quo ipsam quia, omnis minus iste repellat nemo voluptatum cupiditate dolore, dolor porro accusamus facilis neque est obcaecati! Asperiores vero non sapiente voluptatum esse cupiditate ex pariatur, suscipit quos aut velit sed vitae iste repellat, eveniet consectetur optio ipsum numquam dolore dolorum unde hic a corporis in. Sunt sequi vel nobis consequatur, deserunt quasi similique maxime eveniet deleniti libero dolores doloremque qui earum eos molestiae enim. Cum, qui.</div>
+            <div class="title">Text Area Resize Disabling</div>
+            <textarea name="" id="" cols="30" rows="10" class="resize" placeholder="As you can see, you can't change the size of this text area. This is due to the resize:none attribute applied via CSS3."></textarea>
+            <div class="title">Box Sizing</div> 
+            <div class="box1">Content Box - adds padding to defined width <br>width = 300px + 20px + 20px</div>
+            <div class="box2">Border Box - includes padding in defined width <br>width=300px despite padding=20px</div>
+        </div>
+        <div class="lesson">
+            <h3>Flex</h3>
+            <div class="title">Equal Sized Columns</div>
+            <div class="flex-parent">
+                <div class="flexbox1">Column 1</div>
+                <div class="flexbox2">Column 2</div>
+                <div class="flexbox3">Column 3</div>
+            </div>
+            <div class="title">Order</div>
+            <div>The order of the columns can be changed via order:value;</div>
+            <div class="title">Columns</div>
+            <div class="flex-parent-row">
+                <div class="flex-child-row1">Row 1</div>
+                <div class="flex-child-row2">Row 2</div>
+                <div class="flex-child-row3">Row 3</div>
+            </div>
+            <div class="title">Flex Basis</div>
+            <div class="flexrow">
+                <div class="flexcol col1">flex-basis:100%;</div>
+            </div>
+            <div class="flexrow">
+                <div class="flexcol col2">flex-basis:50%;</div>
+            </div>
+            <div class="flexrow">
+                <div class="flexcol col3">flex-basis:25%;</div>
+            </div>
+            <div class="title">Flex Wrap</div>
+            <div>Without wrap:</div>
+            <div class="wrapBox">
+                <div class="noWrapRow-child">The flex-basis is set to 75%.</div>
+                <div class="noWrapRow-child">The flex-basis is set to 75%.</div>
+                <div class="noWrapRow-child">The flex-basis is set to 75%.</div>
+            </div>
+            <div>With wrap:</div>
+            <div class="wrapBox">
+                <div class="wrapRow-child">The flex-basis is set to 75%.</div>
+                <div class="wrapRow-child">The flex-basis is set to 75%.</div>
+                <div class="wrapRow-child">The flex-basis is set to 75%.</div>
+            </div>
+            <div class="title">Vertical Alignment</div>
+            <div class="vertical">This is right in the middle!</div>
+            <div class="title">Align Items (Align block of items)</div>
+            <div class="itembox">
+                <div class="itemcol">Column</div>
+                <div class="itemcol">Column</div>
+                <div class="itemcol">Column</div> 
+                <div class="itemcol">Column</div>
+            </div>
+            <div class="title">Justify Content (Align columns)</div>
+            <div class="justifybox">
+                <div class="itemcol">Column</div>
+                <div class="itemcol">Column</div>
+                <div class="itemcol">Column</div> 
+                <div class="itemcol">Column</div>
+            </div>
+            <div class="title">Align Content (Align rows)</div>
+            <div class="contentbox">
+                <div class="aligncontent">Item1</div>
+                <div class="aligncontent">Item2</div>
+                <div class="aligncontent">Item3</div> 
+                <div class="aligncontent">Item4</div>
+                <div class="aligncontent">Item5</div>
+                <div class="aligncontent">Item6</div>
+                <div class="aligncontent">Item7</div> 
+                <div class="aligncontent">Item8</div>
+                <div class="aligncontent">Item9</div>
+            </div>
+            <div class="title">Align self  (Align specific items)</div>
+            <div class="itembox justify">
+                <div class="itemcol itemcol1">Column</div>
+                <div class="itemcol itemcol2">Column</div>
+                <div class="itemcol itemcol3">Column</div> 
+                <div class="itemcol itemcol4">Column</div>
+            </div>
+        </div>
+        <div class="lesson">
+            <h3>Responsive Web Design</h3>
+            <div class="title">Example:</div>
+            <div class="rwdbox">text text text</div>
+            <div class="title">Print Mode</div>
+            <div>Alters the site for when printing. <br><br>@media print {attribute}</div>
+            <div class="title">Multiple Media Queries</div>
+            <div class="div">
+                For when you want to define an attribute between a specific range. <br>For an example, if you want something to happen between 600px to 1000px:<br>
+                @media(min-width:600px) and (max-width:1000px) {attributes}
+            </div>
+            <div class="title">Responsive Images</div>
+            <div>
+                In order to make an image responsive, we have to write 2 simple lines:<br>
+                img (or the class){<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp; width:100%;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp; height:auto;<br>
+                }
+            </div>
+            <div class="title">Responsive iFrames</div>
+            <div class="video-container video-container-16x9">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/0EqSXDwTq6U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+                
+<!-- Ideas:
+- "Apply Changes" button on the top right
+- Navigation bar on the left -->

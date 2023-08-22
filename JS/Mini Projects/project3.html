@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project #3</title>
+</head>
+<body>
+    <h1 id="headline"></h1>
+    <script>
+        var num=prompt("Enter a number:");
+        num=Number(num);
+        console.log(typeof(num));
+        if(num){
+            if (num>18){
+            var headline=document.getElementById("headline");
+            headline.innerHTML="Over 18";
+            }
+            else{
+                var headline=document.getElementById("headline");
+                headline.innerHTML="Under 18";
+            }
+        }
+        
+    </script>
+</body>
+</html>
