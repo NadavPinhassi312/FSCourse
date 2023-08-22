@@ -18,9 +18,35 @@ body{
 }
 
 .frame{
-    border:1px solid black;
-    height:850px; 
-    width:25%; 
-    background-color:brown;
+    display:flex;
+    flex-direction: column;
+    
+    height:78%; 
+    width:550px; 
     margin: 0 auto;
+    background-color: #363634;
+    border-radius: 25px;
+}
+.text{
+    height:15%;
+    margin:30px ;
+    background-color: #ceceab;
+    border-radius: 15px;
+    border:none;
+    resize:none;
+    box-shadow: inset 0px 0px 10px black;
+}
+.buttoncontainer{
+    display:flex;
+    flex-direction: column;
+    align-content: space-around;
+    flex-basis: 100%;
+    border:1px solid lime;
+    margin:0 30px 30px 30px;
+}
+.buttonarea{
+    display:flex;
+    border:1px solid red;
+    height:10%;
+    
 }
