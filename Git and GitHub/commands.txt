@@ -11,12 +11,12 @@ git rm <filename> - removes a file from the repository
 git restore --staged <filename> - unstages a file
 git restore <filename> / git checkout -- <filename> - undeletes a file
 
-git checkout -b "branchname" - creates a new branch and names it "branchname"
+git checkout -b <branchname> - creates a new branch and names it "branchname"
 git branch - shows all the branches and which one your'e on
-git checkout "branchname" - moves to branch "branchname"
-git branch -d "branchname" - deletes branch
+git checkout <branchname> - moves to branch "branchname"
+git branch -d <branchname> - deletes branch
  
-git merge "branchname" - merges "branchname" into the branch you're in currently
+git merge <branchname" - merges "branchname" into the branch you're in currently
 
 git log - allows you to watch the commit history
 "J" - will move you down
@@ -48,10 +48,12 @@ git stash list - brings up the list of the stashes you have
 git stash apply - brings the work from the attic and makes it unstaged
 git stash drop - drops your stash
 
-git tag "tagname" - sets a new tag with the tagname given
+git tag <tagname> - sets a new tag with the tagname given
 git tag - shows the tag list
 git push origin --tags - pushes the unpushed tags
-git tag -d "tagname" - deletes said tag
+git tag -d <tagname> - deletes said tag
 git push origin --delete - pushed the removal
 
 code . - opens the repository in the code editor
+
+start/explorer <filename> - opens the file in the browser
