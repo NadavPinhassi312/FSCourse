@@ -30,12 +30,17 @@ body{
 }
 .text{
     height:20%;
-    margin:30px ;
+    margin:30px;
+    padding:10px;
     background-color: #ceceab;
     border-radius: 15px;
     border:none;
     resize:none;
     box-shadow: inset 0px 0px 10px black;
+    font-size: 30px;
+    text-align: right;
+    overflow: hidden;
+    vertical-align: middle;
 }
 .buttoncontainer{
     display:flex;
@@ -52,6 +57,14 @@ body{
     /* border:1px solid brown; */
     flex-wrap: wrap;
     flex-basis:60%;
+    margin:1%;
+}
+.bottom{
+    display:flex;
+    flex-direction: row;
+
+    width:100%;
+    flex-basis: 40%;
 }
 .button{
     border-radius: 7px;
@@ -64,13 +77,6 @@ body{
 .smallbutton{
     flex-basis:24%;
     margin:1px;
-}
-.bottom{
-    display:flex;
-    flex-direction: row;
-
-    width:100%;
-    flex-basis: 40%;
 }
 .numbers{
     display:flex;
