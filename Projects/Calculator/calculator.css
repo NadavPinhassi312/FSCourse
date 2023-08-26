@@ -30,16 +30,17 @@ body{
 }
 .text{
     height:20%;
-    margin:30px ;
+    margin:30px;
+    padding:10px;
     background-color: #ceceab;
     border-radius: 15px;
     border:none;
     resize:none;
     box-shadow: inset 0px 0px 10px black;
-
     font-size:40px;
     text-align: right;
     padding:25px 15px 0 0 ;
+
 }
 .buttoncontainer{
     display:flex;
@@ -60,6 +61,7 @@ body{
 .smallbutton{
     flex-basis:33%;
 }
+
 .left{
     display:flex;
     flex-wrap: wrap;
@@ -75,6 +77,7 @@ body{
 .zero{
     width:99%;   
 }
+
 .right{
     display:flex;
     flex-direction: column;
