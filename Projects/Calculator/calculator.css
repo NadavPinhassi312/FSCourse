@@ -22,7 +22,7 @@ body{
     display:flex;
     flex-direction: column;
     
-    height:78%; 
+    height:90%; 
     width:500px; 
     margin: 0 auto;
     background-color: #363634;
@@ -36,22 +36,17 @@ body{
     border:none;
     resize:none;
     box-shadow: inset 0px 0px 10px black;
+
+    font-size:40px;
+    text-align: right;
+    padding:25px 15px 0 0 ;
 }
 .buttoncontainer{
     display:flex;
-    flex-direction: column;
+    flex-direction: row;
     align-content: space-around;
     flex-basis: 100%;
     margin:0 30px 30px 30px;
-    /* border:1px solid white; */
-    z-index: 0;
-    /* border:1px solid white; */
-}
-.top{
-    display:flex;
-    /* border:1px solid brown; */
-    flex-wrap: wrap;
-    flex-basis:60%;
 }
 .button{
     border-radius: 7px;
@@ -59,39 +54,49 @@ body{
     background-color: #4e4e4d;
     color:white;
     font-size:30px;
-    
+    border:1px solid black;
+    width:90%;
 }
 .smallbutton{
-    flex-basis:24%;
-    margin:1px;
+    flex-basis:33%;
 }
-.bottom{
+.left{
     display:flex;
-    flex-direction: row;
-
-    width:100%;
-    flex-basis: 40%;
-}
-.numbers{
-    display:flex;
+    flex-wrap: wrap;
+    flex-basis:75%; 
     flex-direction: column;
-    flex-basis:75%;
-    justify-content: space-between;
-    flex-wrap: wrap;   
-    flex-direction: row;
+    /* border:1px solid blue; */
 }
-.one,.two,.three{
-    flex-basis: 31.5%;
-    margin:0.75%; 
+.buttonrow{
+    display:flex;
+    /* border:1px solid black; */
+    flex-basis:20%;
 }
 .zero{
+    width:99%;   
+}
+.right{
+    display:flex;
+    flex-direction: column;
+    flex-basis:25%;
     width:100%;
-    margin:1%;
+    flex-basis: 25%;
+    /* border:1px solid red; */
+}
+.upperright{
+    display:flex;
+    flex-basis: 60%;
+    /* border:1px solid lime; */
+    flex-direction: column;
+}
+.lowerright{
+    display: flex;
+    flex-basis: 40%;
+    /* border:1px solid #797918; */
+    flex-direction: column;
 }
 .equals{
-    flex-basis:24%;
-    margin:1%;
-    
+    flex-basis:100%;
 }
 /* .button:before{
     content:' ';
