@@ -8,11 +8,11 @@
 </head>
 <body>
     <div class="frame">
-        <textarea name="" id="textarea" cols="30" rows="10" class="text"></textarea>
+        <textarea name="" id="textarea" cols="30" rows="10" class="text" value="0"></textarea>
         <div class="buttoncontainer">
             <div class="left">
                 <div class="buttonrow">
-                    <button class="button clear" value="C" onclick="clear()">C</button>
+                    <button class="button clear" value="C">C</button>
                     <button class="button mult" value="*">*</button>
                     <button class="button devide" value="/">/</button>
                 </div>
@@ -50,12 +50,33 @@
     </div>
     <script>
         var textarea=document.querySelector(".text");
-        var btn=document.querySelectorAll(".button");
+        var buttons=document.querySelectorAll(".button");
         var equals=document.querySelector(".equals");
+        textarea.innerHTML = "0";
+
         
-        btn.addEventListener("click",function(){
-            console.log("123");
-        });
+        
+        buttons.forEach((buttons) =>{
+            buttons.addEventListener("click",(event)=>{
+                textValue=textarea.innerHTML;
+                var btnPressed=event.target.value;
+                if (!isNaN(btnPressed)&&textValue=="0"){
+                    textarea.innerHTML=btnPressed;
+                }
+                
+                if (btnPressed=="C"){
+                    textarea.innerHTML="0";
+                }
+                if(btnPressed=="="){
+                    equals();
+                }
+
+                function equals(){
+                    
+                }
+            })
+        })
+        
     </script>
 </body>
 </html>

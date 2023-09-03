@@ -32,15 +32,16 @@ body{
 .text{
     height:20%;
     margin:30px;
-    padding:10px;
     background-color: #ceceab;
     border-radius: 15px;
     border:none;
     resize:none;
+    overflow-x:none;
+    overflow-y:none;
     box-shadow: inset 0px 0px 10px black;
-    font-size:40px;
+    font-size:55px;
     text-align: right;
-    padding:25px 15px 0 0 ;
+    padding:20px 15px 0 0 ;
     
 }
 .buttoncontainer{ 
