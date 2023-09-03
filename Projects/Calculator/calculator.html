@@ -50,20 +50,12 @@
     </div>
     <script>
         var textarea=document.querySelector(".text");
-        var eric=document.querySelector(".clear");
+        var btn=document.querySelectorAll(".button");
         var equals=document.querySelector(".equals");
         
-        function clear(){
-            textarea.innerHTML="";
-        }
-        function equals(){
-
-        }
-
-        eric.addEventListener("click", myFunction);
-        function myFunction() {
-        alert ("Hello World!");
-        }
+        btn.addEventListener("click",function(){
+            console.log("123");
+        });
     </script>
 </body>
 </html>
