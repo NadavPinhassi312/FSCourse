@@ -8,47 +8,63 @@
 </head>
 <body>
     <div class="frame">
-        <textarea name="" id="" cols="30" rows="10" class="text"></textarea>
+        <textarea name="" id="textarea" cols="30" rows="10" class="text"></textarea>
         <div class="buttoncontainer">
             <div class="left">
                 <div class="buttonrow">
-                    <button class="button clear">C</button>
-                    <button class="button mult">*</button>
-                    <button class="button devide">/</button>
+                    <button class="button clear" value="C" onclick="clear()">C</button>
+                    <button class="button mult" value="*">*</button>
+                    <button class="button devide" value="/">/</button>
                 </div>
                 <div class="buttonrow">
-                    <button class="button seven">7</button>
-                    <button class="button eight">8</button>
-                    <button class="button nine">9</button>
+                    <button class="button seven" value="7">7</button>
+                    <button class="button eight" value="8">8</button>
+                    <button class="button nine" value="9">9</button>
                 </div>
                 <div class="buttonrow">
-                    <button class="button four">4</button>
-                    <button class="button five">5</button>
-                    <button class="button six">6</button>
+                    <button class="button four" value="4">4</button>
+                    <button class="button five" value="5">5</button>
+                    <button class="button six" value="6">6</button>
                 </div>
                 <div class="buttonrow">
-                    <button class="button one">1</button>
-                    <button class="button two">2</button>
-                    <button class="button three">3</button>
+                    <button class="button one" value="1">1</button>
+                    <button class="button two" value="2">2</button>
+                    <button class="button three" value="3">3</button>
                 </div>
                 <div class="buttonrow">
-                    <button class="button zero">0</button>
+                    <button class="button zero" value="0">0</button>
                 </div>
             </div>
             <div class="right">
                 <div class="upperright">
-                    <button class="button decimal">.</button>
-                    <button class="button plus">+</button>
-                    <button class="button minus">-</button>
+                    <button class="button decimal" value=".">.</button>
+                    <button class="button plus" value="+">+</button>
+                    <button class="button minus" value="-">-</button>
                     
                 </div>
                 <div class="lowerright">
-                    <button class="button equals">=</button>
+                    <button class="button equals" value="=">=</button>
                 </div>
             </div>
-            <!-- <div class="bottomtext">Calculator by Nadav Pinhassi</div> -->
         </div>
     </div>
+    <script>
+        var textarea=document.querySelector(".text");
+        var eric=document.querySelector(".clear");
+        var equals=document.querySelector(".equals");
+        
+        function clear(){
+            textarea.innerHTML="";
+        }
+        function equals(){
+
+        }
+
+        eric.addEventListener("click", myFunction);
+        function myFunction() {
+        alert ("Hello World!");
+        }
+    </script>
 </body>
 </html>
 

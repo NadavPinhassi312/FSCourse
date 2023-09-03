@@ -62,10 +62,10 @@ body{
     transition-duration: 0.3s;
 }
 .button:hover{
-    background-color: #686868;
+    background-color: #616161;
 }
 .button:active{
-    background-color: #363634;
+    background-color: #4e4e4d;
 }
 
 .left{
