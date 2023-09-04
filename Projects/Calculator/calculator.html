@@ -58,22 +58,31 @@
         
         buttons.forEach((buttons) =>{
             buttons.addEventListener("click",(event)=>{
-                textValue=textarea.innerHTML;
                 var btnPressed=event.target.value;
-                if (!isNaN(btnPressed)&&textValue=="0"){
+
+                if (!isNaN(btnPressed)&&textarea.innerHTML=="0"){
                     textarea.innerHTML=btnPressed;
                 }
-                
+                else if (btnPressed=="-"&&textarea.innerHTML=="0"){
+                    textarea.innerHTML=btnPressed;
+                }
+                else if (btnPressed!="="){
+                    textarea.innerHTML=textarea.innerHTML+btnPressed;
+                }
+
+                if(btnPressed=="="){
+                    calc(textarea.innerHTML);
+                }
+                function calc(){ 
+                    var array=textarea.innerHTML.split(/[-_]+/);
+                    console.log(array);
+                    alert(array);
+                }
+
                 if (btnPressed=="C"){
                     textarea.innerHTML="0";
                 }
-                if(btnPressed=="="){
-                    equals();
-                }
-
-                function equals(){
-                    
-                }
+                
             })
         })
         
