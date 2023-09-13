@@ -1,0 +1,10 @@
+Variables:
+defining a variable:
+num = 123
+
+Python data bases:
+- Numeric data bases: int, float, complex numbers
+- Booleans
+- Sequences: List = ["object1", "object2", "object3"]
+	     Tuples = ("object1", "object2", "object3") - immutable, unchangable, like a const.
+             Sets = {"object1", "object2", "object3"} - like a list but deletes any duplicates.
