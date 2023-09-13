@@ -8,3 +8,23 @@ Python data bases:
 - Sequences: List = ["object1", "object2", "object3"]
 	     Tuples = ("object1", "object2", "object3") - immutable, unchangable, like a const.
              Sets = {"object1", "object2", "object3"} - like a list but deletes any duplicates.
+
+f-strings:
+name = "Nadav"
+print(f"{name}") - will print Nadav. Used for using variables inside strings.
+
+List functions: 
+lst[i] - returns the value in location i
+len(lst) - returns the length of the list
+lst.append(var) - pushed the object into place 0 in the list and pushed the other objects respectfully.
+lst.remove(var) - removes the object from the list
+lastItem=lst.pop() - assigns the value of the last item from the list to lastItem and deletes it from lst.
+print ([1,2]+[3]) -> [1,2,3]
+print (1 in [1,2,3]) -> True
+
+max(lst) - returs the highest value in the list.
+min(lst) - returns the lowest value in the list.
+sorted(lst) - sorts the list from smallest to biggest.
+sum(lst) - returns the sum of the list, relevant to numbers. 
+L = list(str) - turns string into a list
+str = "".join(list) - turs a list into a string
