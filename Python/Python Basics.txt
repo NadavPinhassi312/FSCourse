@@ -27,4 +27,20 @@ min(lst) - returns the lowest value in the list.
 sorted(lst) - sorts the list from smallest to biggest.
 sum(lst) - returns the sum of the list, relevant to numbers. 
 L = list(str) - turns string into a list
-str = "".join(list) - turs a list into a string
+str = "".join(list) - turns a list into a string
+
+Dictionaries:
+dictName={
+    "key1":"value1",
+    "key2':"value2",
+    "key3":"value3"
+}
+print(dictName["key1"]) -> Will print "value1".
+dictName["key4"]="value4" -> Adds a new key to the dictionary and assigns a value to it.
+del dictName["key4"] -> Deletes the key from the dictionary.
+dictName.keys() -> Returns a list of the keys in the dictionary.
+dictName.values() -> Returns a list of the values in the dictionary.
+dictName.get(insertedKey) -> receives a key and returns the value of the key givem, in this case the variable "insertedKey". Returns None in case of invalid key.
+dictName.items() -> Returns a list of the dictionary content in the form of [("key1","value1"),("key2","value2"),("key3","value3")].
+
+Tuples:
