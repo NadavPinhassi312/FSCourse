@@ -2,62 +2,73 @@ Variables:
 defining a variable:
 num = 123
 
-Python data bases:
-- Numeric data bases: int, float, complex numbers
-- Booleans
-- Sequences: List = ["object1", "object2", "object3"]
-	     Tuples = ("object1", "object2", "object3") - immutable, unchangable, like a const.
-             Sets = {"object1", "object2", "object3"} - like a list but deletes any duplicates.
+Python data bases: 
+    Numeric data bases: 
+        - int
+        - float
+        - complex numbers
 
-f-strings:
-name = "Nadav"
-print(f"{name}") - will print Nadav. Used for using variables inside strings.
+    String:
+        a sequence of chars, definded by quotation marks. Example:
+        name = "Nadav"
+        
+        String Functions:
+        print(f"{name}") -> will print Nadav. This is called an f-string, and it is used for using variables inside strings in a more comfortable manner.
 
-Booleans:
-    True or false.
+    Booleans:
+        True or false.
 
-Lists: 
-    Quite literally, a list of items. The items have an order and are contained in the data type called a list. The list is defined with hard brackets. Example:
-    lst=["item1","item2","item3"]
+    Lists: 
+        Quite literally, a list of items. The items have an order and are contained in the data type called a list. The list is defined with hard brackets. Example:
+        lst=["item1","item2","item3"]
 
-    List Functions:
-    lst[i] - returns the value in location i
-    len(lst) - returns the length of the list
-    lst.append(var) - pushed the object into place 0 in the list and pushed the other objects respectfully.
-    lst.remove(var) - removes the object from the list
-    lastItem=lst.pop() - assigns the value of the last item from the list to lastItem and deletes it from lst.
-    print ([1,2]+[3]) -> [1,2,3]
-    print (1 in [1,2,3]) -> True
-    lst[x:y] -> Returns a list that consists of lst's items from index x to the yth index. (If lst=[1,2,3,4,5], lst[0:3] returns [1,2,3])
-    max(lst) - returs the highest value in the list.
-    min(lst) - returns the lowest value in the list.
-    sorted(lst) - sorts the list from smallest to biggest.
-    sum(lst) - returns the sum of the list, relevant to numbers. 
-    L = list(str) - turns string into a list
-    str = "".join(list) - turns a list into a string
+        List Functions:
+        lst[i] - returns the value in location i
+        len(lst) - returns the length of the list
+        lst.append(var) - pushed the object into place 0 in the list and pushed the other objects respectfully.
+        lst.remove(var) - removes the object from the list
+        lastItem=lst.pop() - assigns the value of the last item from the list to lastItem and deletes it from lst.
+        print ([1,2]+[3]) -> [1,2,3]
+        print (1 in [1,2,3]) -> True
+        lst[x:y] -> Returns a list that consists of lst's items from index x to the yth index. (If lst=[1,2,3,4,5], lst[0:3] returns [1,2,3])
+        max(lst) - returs the highest value in the list.
+        min(lst) - returns the lowest value in the list.
+        sorted(lst) - sorts the list from smallest to biggest.
+        sum(lst) - returns the sum of the list, relevant to numbers. 
+        L = list(str) - turns string into a list
+        str = "".join(list) - turns a list into a string
 
-Tuples:
-    Basically a const list, defined with parentheses.
-    tup = ("item1", "item2", "item3")
-    Tupels cant be appended, removed or popped. The only way to add or remove items from them is to create a new one and to add or remove items from it.
-    A tuple will always maintain its order, as opposed to other data types.
+    Tuples:
+        Basically a const list, defined with parentheses.
+        tup = ("item1", "item2", "item3")
+        Tupels cant be appended, removed or popped. The only way to add or remove items from them is to create a new one and to add or remove items from it.
+        A tuple will always maintain its order, as opposed to other data types.
 
-Sets:
-    Similar to lists and items in the sense they have lists of items. They are mutable and fore unique data, meaning you can't have duplicates of the same item in the set. Defined with curly brackets. 
-    set={"value1","value2","value3"}
-    Sets dont keep the order of the values.
-    set.add("value4") -> adds value4 to the set. It's add and not append because it doesnt insert it to a specific place, since it doesn't keep an order.
+    Sets:
+        Similar to lists and items in the sense they have lists of items. They are mutable and fore unique data, meaning you can't have duplicates of the same item in the set. Defined with curly brackets. 
+        set={"value1","value2","value3"}
+        Sets dont keep the order of the values.
+        set.add("value4") -> adds value4 to the set. It's add and not append because it doesnt insert it to a specific place, since it doesn't keep an order.
 
-Dictionaries:
-    dictName={
-        "key1":"value1",
-        "key2':"value2",
-        "key3":"value3"
-    }
-    print(dictName["key1"]) -> Will print "value1".
-    dictName["key4"]="value4" -> Adds a new key to the dictionary and assigns a value to it.
-    del dictName["key4"] -> Deletes the key from the dictionary.
-    dictName.keys() -> Returns a list of the keys in the dictionary.
-    dictName.values() -> Returns a list of the values in the dictionary.
-    dictName.get(insertedKey) -> receives a key and returns the value of the key givem, in this case the variable "insertedKey". Returns None in case of invalid key.
-    dictName.items() -> Returns a list of the dictionary content in the form of [("key1","value1"),("key2","value2"),("key3","value3")].
+    Dictionaries:
+        dictName={
+            "key1":"value1",
+            "key2':"value2",
+            "key3":"value3"
+        }
+        print(dictName["key1"]) -> Will print "value1".
+        dictName["key4"]="value4" -> Adds a new key to the dictionary and assigns a value to it.
+        del dictName["key4"] -> Deletes the key from the dictionary.
+        dictName.keys() -> Returns a list of the keys in the dictionary.
+        dictName.values() -> Returns a list of the values in the dictionary.
+        dictName.get(insertedKey) -> receives a key and returns the value of the key givem, in this case the variable "insertedKey". Returns None in case of invalid key.
+        dictName.items() -> Returns a list of the dictionary content in the form of [("key1","value1"),("key2","value2"),("key3","value3")].
+
+    None: 
+        None.
+
+Files:
+with open("file_name.txt","w") as f:
+    
+with open ("file_name.txt", "r") as f:
+    print (type(f))
