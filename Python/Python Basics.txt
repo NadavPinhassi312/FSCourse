@@ -69,6 +69,14 @@ Python data bases:
 
 Files:
 with open("file_name.txt","w") as f:
-    
+    f.write("text") -> Writes to the file
 with open ("file_name.txt", "r") as f:
     print (type(f))
+
+Comparison Operators:
+    =, ==, <, >, <=, >=, blah blah blah.
+    New thing! the is operator. Looks for the exact value compared. Example: 
+    
+    var = None
+    if var == None -> Checks for equaity between the values.
+    if var is None -> Looks for an exact location in the memory dedicated to the value of var, something that is literally the exact same thing.
