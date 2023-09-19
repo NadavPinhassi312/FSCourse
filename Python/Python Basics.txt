@@ -80,3 +80,8 @@ Comparison Operators:
     var = None
     if var == None -> Checks for equaity between the values.
     if var is None -> Looks for an exact location in the memory dedicated to the value of var, something that is literally the exact same thing.
+
+Loops:
+For
+While
+Unpacking (tuple of tuples) 
