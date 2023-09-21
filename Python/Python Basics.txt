@@ -82,6 +82,28 @@ Comparison Operators:
     if var is None -> Looks for an exact location in the memory dedicated to the value of var, something that is literally the exact same thing.
 
 Loops:
-For
-While
-Unpacking (tuple of tuples) 
+    - For: 
+        for item in sequence:
+            ...
+        Unpacking a tuple of tupels:
+            people = (
+                (22,"Nadav"),
+                (24,"Rom"),
+                (23,"Yonatan")
+            )
+            print(people)
+            for age, name in people:
+                print (f"{name} is {age} years old")
+        Unpacking a dictionary:
+            nadav={
+                "Age":22,
+                "Job":"Medic and security guard",
+                "Currently on":"A train"
+            }
+            nadavTuple=nadav.items()
+            for key,value in nadavTuple:
+                print(f"{key}: {value}")
+    - While:
+        while condition:
+            ...
+     
