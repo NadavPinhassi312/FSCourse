@@ -106,4 +106,7 @@ Loops:
     - While:
         while condition:
             ...
+    - Break and Continue:
+        Continue - Skips the remainder of the iteration and starts a new one.
+        Break - Breaks out of the loop
      
