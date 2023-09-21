@@ -221,7 +221,6 @@
                 console.log("You live in "+this.city);
                 return this;
             }
-
             whatLanguage(){
                 console.log("This person speaks "+this.language);
                 return this;
@@ -255,10 +254,11 @@
 
 
         }
-        let  {name,
-              age,
-              cats:numOfCats, //Change variable name from the one in the object
-              ...rest
+        let  {
+                name,
+                age,
+                 cats:numOfCats, //Change variable name from the one in the object
+                ...rest
              } = me;
         console.log(name,age,numOfCats,rest);
         

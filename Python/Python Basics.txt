@@ -110,3 +110,38 @@ Loops:
         Continue - Skips the remainder of the iteration and starts a new one.
         Break - Breaks out of the loop
      
+Helpful Operators:
+    - in - A way to check whether an item is in a sequence. Example:
+        if str in longerStr:
+            pass 
+    - enumerate - A way to get the loop iteration number. Example:
+        for index,item in enumerate(lst):
+            print(index+1,item) -> Will print the index (+1 because it starts from 0) and the item in the list.
+    - Zipping - A way to merge 2 lists together into a paired tuple. Example:
+        list1=['a','b','c']
+        list2=[1,2,3]
+        for letter,number in zip(list1,list2):
+            print(letter,"=>",number). 
+                   -> Will print: 
+                   a => 1
+                   b => 2
+                   c => 3 
+    - min(lst) - Returns the minimal value in the list
+    - max(lst) - Returns the maximal value in the list
+    - join() - Joins together items in a list with the string before, making a string. Example:
+        list=['a','b','c']
+        print("->".join(list)) -> prints a->b->c
+    - split() - The opposite of join. Example:
+        sentence = "I eat a banana"
+        words = sentence.split(" ")
+        print(words) -> will print ["I", "eat", "a", "banana"]
+    - from random import shuffle 
+      shuffle(words) - shuffles the list
+
+List Comprehensions:
+    str = "Chair on the floor"
+    strLst=[letter for letter in str]
+    print(strLst) -> prints ['C', 'h', 'a', 'i', 'r', ' ', 'o', 'n', ' ', 't', 'h', 'e', ' ', 'f', 'l', 'o', 'o', 'r']    
+
+    strLst=[letter for letter in str if letter.lower() in "chair"]
+    print(strLst) -> prints ['C', 'h', 'a', 'i', 'r', 'h', 'r']
