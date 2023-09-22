@@ -139,9 +139,35 @@ Helpful Operators:
       shuffle(words) - shuffles the list
 
 List Comprehensions:
-    str = "Chair on the floor"
-    strLst=[letter for letter in str]
-    print(strLst) -> prints ['C', 'h', 'a', 'i', 'r', ' ', 'o', 'n', ' ', 't', 'h', 'e', ' ', 'f', 'l', 'o', 'o', 'r']    
+    A way to create lists using a for loop. Example:
+        str = "Chair on the floor"
+        strLst=[letter for letter in str]
+        print(strLst) -> prints ['C', 'h', 'a', 'i', 'r', ' ', 'o', 'n', ' ', 't', 'h', 'e', ' ', 'f', 'l', 'o', 'o', 'r']    
+    It can also be done with a condition:
+        strLst=[letter for letter in str if letter.lower() in "chair"]
+        print(strLst) -> prints ['C', 'h', 'a', 'i', 'r', 'h', 'r']
+    Celsius to fahrenheit convertor using list comperhension:
+        celsius=[-40,-20,1,10,15,25,35,50]
+        f=[(temp*1.8)+32 for temp in celsius]
+        print(f)        
+    Dictionary Comprehensions:      
+        keys=["name","age","role"]
+        values=["Nadav",22,"Student"]
+        person={key:value for key,value in zip(keys,values)}
+        print(person)
 
-    strLst=[letter for letter in str if letter.lower() in "chair"]
-    print(strLst) -> prints ['C', 'h', 'a', 'i', 'r', 'h', 'r']
+Functions:
+    def funcName():
+        print("hello")  
+    def function(var="value"): -> the default value is in the variable, changable if value in inserted into the function.
+    
+    def yourAge(age):
+    age=int(age)
+    print(f"You are {age} years old")
+    age=input("What is your age? ")
+    yourAge(age)
+
+Args and Kwargs:
+    Arguments and keyword arguments. An argument is the local variable inserted into the function.
+    def funcName(name,*args,**kwargs)
+    As noted, args are denoted with one asterix and kwargs are denoted with two.
