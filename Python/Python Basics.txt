@@ -61,7 +61,7 @@ Python data bases:
         del dictName["key4"] -> Deletes the key from the dictionary.
         dictName.keys() -> Returns a list of the keys in the dictionary.
         dictName.values() -> Returns a list of the values in the dictionary.
-        dictName.get(insertedKey) -> receives a key and returns the value of the key givem, in this case the variable "insertedKey". Returns None in case of invalid key.
+        dictName.get(insertedKey) -> receives a key and returns the value of the key given, in this case the variable "insertedKey". Returns None in case of invalid key.
         dictName.items() -> Returns a list of the dictionary content in the form of [("key1","value1"),("key2","value2"),("key3","value3")].
 
     None: 
@@ -168,6 +168,70 @@ Functions:
     yourAge(age)
 
 Args and Kwargs:
-    Arguments and keyword arguments. An argument is the local variable inserted into the function.
-    def funcName(name,*args,**kwargs)
-    As noted, args are denoted with one asterix and kwargs are denoted with two.
+    Arguments and keyword arguments.
+    Args (denoted with *) recive items and create a tuple, while kwargs (denoted with **) receive keys and values and create a dictionary. 
+    Args example:
+        def printTuple(*args):
+            for arg in args:
+                print (arg)
+            print("The type of an argument is",type(args))
+        printTuple("chair",22,True,77.4,False)
+    Kwargs example:
+        def printDict(**kwargs):
+            for key,value in kwargs.items():
+                print(f"{key}:{value}")
+            print("The type of kwargs is",type(kwargs))
+        printDict(name="Nadav",drink="Water",sport="Biking")
+    
+    you can enter as many args as you wish and same for kwargs. Example:
+    def getDish(name,*dishes,**details):
+        print (f"Hello {name}!")
+        for dish in dishes:
+            print(f"You ordered {dish}")
+        address=details.get("address")
+        if address:
+            print(f"The order will be sent shortly to {address}")
+        else:
+            print("Enter an address you moron!")
+
+    getDish("Nadav","Hamburger","Sushi",address="Hagilad 2 Netanya")
+
+Mapping:
+    A way to use a function on an iterable. Exmaple:
+    numbers=[1,2,65,4.3]
+    poweredNumbers=[]
+
+    def powerOfTwo(num):
+        return num**2
+    
+    for num in map(powerOfTwo,numbers): -> The function receives a function an an iterable and performs the function on it (In this case creates a list of the powered numbers).
+        poweredNumbers.append(num)
+
+    print(poweredNumbers)
+
+    Another more efficient way:
+    poweredNumbers=list(map(powerOfTwo,numbers))
+
+Filter:
+    A way to apply a function and to remove data that you don't want. The function only keeps the items that the function returned true about, and doesn't reassign them. It is very similar to the mapping syntax. Example:
+
+    numbers=[1,2,3,4,5,6,7,8,9,10,11,12,13,14]
+
+    def filterEvenNumbers(num):
+        return num%2==0
+    for num in filter(filterEvenNumbers,numbers):
+        print(num) -> Will print 2,4,6,8,10,12,14.
+    
+    Another way to write it:
+        evens=list(filter(filterEvenNumbers,numbers))
+        print(evens)    
+
+Lambda Expressions (Anonymous Functions):
+    A one time use function, mainly used for simple mathematic calculations. Example:
+        add = lambda num1, num2: num1+num2
+        print(add(1,2))
+
+        powerOf=lambda num,power:num**power
+        print(powerOf(2,3))
+    
+    
