@@ -27,5 +27,27 @@
 #         evenSum+=num
 # print(evenSum)
 
+# # Problem 3
+# import math
+# def isPrime(num):
+#     i=2
+#     while i<num/2:
+#         if num%i==0:
+#             return False
+#         print(f"{num}%{i}={num%i}")
+#         i+=1
+#     return True
 
+# def biggestPrime(num):
+#     i=1
+#     primeList=[]
+#     while i<num:
+#         if num%i==0 and isPrime(i) and i!=1:
+#             primeList.append(i)
+#         i+=1
+#     return primeList
 
+# print(biggestPrime(600851475143))
+
+# #Problem 4
+# i=
