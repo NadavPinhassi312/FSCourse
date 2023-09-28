@@ -50,4 +50,44 @@
 # print(biggestPrime(600851475143))
 
 # #Problem 4
-# i=
+# def isPalindrome(num):
+#     num=str(num)
+#     revNum=num[::-1]
+#     if num==revNum:
+#         return True
+#     else:
+#         return False
+    
+# i=100
+# palindromeList=[]
+# while i<1000:
+#     j=100
+#     while j<1000:
+#         mult=i*j
+#         if isPalindrome(mult):
+#             # print (f"{mult} is a palindrome!")
+#             palindromeList.append(mult)
+#         j+=1
+#     i+=1
+# palindromeList= sorted(list(set(palindromeList)))
+
+# print(palindromeList[-1])
+
+#Problem 5
+def divUpToX(divNum):
+    num=1
+    numFound=False
+    while numFound==False:
+        localDiv=1
+        while localDiv<divNum:
+            if num%localDiv!=0:
+                localDiv=1
+                num+=1
+                continue
+            if localDiv==divNum:
+                return num
+            localDiv+=1
+        num+=1
+    
+
+print(divUpToX(3))
