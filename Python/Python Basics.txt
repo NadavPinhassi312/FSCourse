@@ -235,14 +235,37 @@ Lambda Expressions (Anonymous Functions):
         print(powerOf(2,3))
     
 Objects (classes):
-    class person:
-        def __init__(self, name, city):
-            self.name=name
-            self.city=city
-        
-        def getAttributes(self):
-            print(f"Hello! My name is {self.name} and I live in {self.city}.")
+    Attributes and methods:
+        class person:
+            def __init__(self, name, city):
+                self.name=name
+                self.city=city
+            
+            def getAttributes(self):
+                print(f"Hello! My name is {self.name} and I live in {self.city}.")
 
-    nadav=person("Nadav","Netanya")
-    nadav.getAttributes()
-        
+        nadav=person("Nadav","Netanya")
+        nadav.getAttributes()
+    
+    Class inheritance:
+        A way to create a sub-class of a bigger one. Example:
+        class Animal:
+            def __init__(self,name,weight):
+                self.name=name
+                self.weight=weight
+            def speak(self):
+                print("Animal sound")
+
+        class Cat(Animal):
+            def speak(self):
+                print("Meow")
+
+        kvishi = Cat("Kvishi","10kg")
+        kvishi.speak()
+
+        class Dog(Animal):
+            def speak(self):
+                print("Woof Woof")
+
+        shpits=Dog("Shpits","35kg")
+        shpits.speak()
