@@ -238,7 +238,7 @@ Objects (classes):
     Attributes and methods:
 
     
-    Class inheritance:
+    Class Inheritance:
         A way to create a sub-class of a bigger one. Example:
         class Animal:
             def __init__(self,name,weight):
@@ -279,3 +279,49 @@ Objects (classes):
 
     The Super Function:
         A method used in a sub-class method that allows you to use the original method it's inheriting from.
+        class Animal:
+            def __init__(self,name,weight):
+                self.name=name
+                self.weight=weight
+                self.legNum=4
+            def speak(self):
+                raise NotImplementedError("Not implemented, please add an animal sound")
+            def legNum(self):
+                return self.legNum
+
+        class Fish(Animal):
+            def breath(self):
+                print("blub blub")
+            def HowManyLegs(self):
+                print(super().legNum()-4)
+
+        class Dog(Animal):
+            def HowManyLegs(self):
+                print(super().legNum())
+
+        shpits=Dog("Shpits",35)
+        shpits.HowManyLegs()
+
+        gizmo=Fish("Gizmo",0.3)
+        gizmo.HowManyLegs()
+    
+    Dunder Methods:
+        Methods which begin and end with double underscores, AKA dunders.
+        class Book:
+            def __init__(self,name,pages,content):
+                self.name=name
+                self.pages=int(pages)
+                self.content=content
+            
+            def __str__(self):
+                return self.name #changes the name of the object via print(objectName)
+            
+            def __len__(self):
+                words=self.content.split()
+                return len(words) #returns the length of the object as defined
+            
+
+        percyJackson=Book("Percy Jackson", 300, "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.")
+
+        print(percyJackson.__str__())
+        print(percyJackson.__len__())
