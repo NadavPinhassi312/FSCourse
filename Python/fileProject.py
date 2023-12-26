@@ -1,16 +1,10 @@
-# sentence = input("Enter a sentence: ")
-# sentenceLength=len(sentence)
+class person:
+    def __init__(self, name, city):
+        self.name=name
+        self.city=city
+    
+    def getAttributes(self):
+        print(f"Hello! My name is {self.name} and I live in {self.city}.")
 
-# fileName=input("Enter the file's name: ")
-# fileName=f"{fileName}.txt"
-
-# with open(fileName,"w") as f:
-#     f.write(sentence)
-#     f.close()
-
-# print(f"You've written {sentenceLength} characters to {fileName}")
-
-keys=["name","age","role"]
-values=["Nadav",22,"Student"]
-person={key:value for key,value in zip(keys,values)}
-print(person)
+nadav=person("Nadav","Netanya")
+nadav.getAttributes()
