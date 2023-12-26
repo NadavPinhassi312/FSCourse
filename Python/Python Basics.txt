@@ -236,16 +236,7 @@ Lambda Expressions (Anonymous Functions):
     
 Objects (classes):
     Attributes and methods:
-        class person:
-            def __init__(self, name, city):
-                self.name=name
-                self.city=city
-            
-            def getAttributes(self):
-                print(f"Hello! My name is {self.name} and I live in {self.city}.")
 
-        nadav=person("Nadav","Netanya")
-        nadav.getAttributes()
     
     Class inheritance:
         A way to create a sub-class of a bigger one. Example:
@@ -287,4 +278,4 @@ Objects (classes):
         nemo.speak()
 
     The Super Function:
-        A method used in a sub-class which bubbles up to the original method it's inheriting from.
+        A method used in a sub-class method that allows you to use the original method it's inheriting from.
