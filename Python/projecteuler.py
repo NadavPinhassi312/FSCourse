@@ -101,4 +101,27 @@ def MinDiv(divRange):
             checkNum+=2520
     return checkNum
         
-print(MinDiv(20))Problem 5
+print(MinDiv(20))
+
+#Problem 6
+def CreateList(num):
+    list=[]
+    for i in range(num):
+        list.append(i+1)
+    return list  
+    
+def SquareSum(num):
+    list=CreateList(num)
+    total=0
+    for i in list:
+        total+=i**2
+    return total
+    
+def SumSquare(num):
+      list=CreateList(num)
+      total=0
+      for i in list:
+          total+=i
+      return total**2
+        
+print(SumSquare(100)-SquareSum(100)) 
