@@ -74,20 +74,31 @@
 # print(palindromeList[-1])
 
 #Problem 5
-def divUpToX(divNum):
-    num=1
-    numFound=False
-    while numFound==False:
-        localDiv=1
-        while localDiv<divNum:
-            if num%localDiv!=0:
-                localDiv=1
-                num+=1
-                continue
-            if localDiv==divNum:
-                return num
-            localDiv+=1
-        num+=1
-    
+def GenNumList(lstRange):
+    divRangeList=[]
+    for numAdded in range(lstRange):
+        divRangeList.append(numAdded+1)
+    return divRangeList
 
-print(divUpToX(3))
+def IsDivByList(num,list):
+    print(" ")
+    for i in list:
+        print(f'num:{num}, i:{i}')
+        if num%i!=0:
+            return False
+    return True
+
+def MinDiv(divRange):
+    divList=GenNumList(divRange)
+    print(divList)
+    
+    checkNum=2520
+    numFound=False
+    while (numFound==False):
+        if IsDivByList(checkNum,divList):
+            numFound=True
+        else:
+            checkNum+=2520
+    return checkNum
+        
+print(MinDiv(20))Problem 5
