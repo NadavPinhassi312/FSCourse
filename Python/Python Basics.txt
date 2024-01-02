@@ -369,3 +369,15 @@ Errors and Exceptions:
             total="N/A"
         finally:
             print("The total is ", total)
+        
+    Catching exceptions:
+    A way to catch an error and respond to it, having the error not crashing the whole program. Example:
+    try:
+        print(person["fav_food"])
+    except KeyError as e:
+        print(f'The key {e} doesnt exist.')
+    except ZeroDivisionError:
+        print("Cannot divide by zero")
+    except Exception as e: --> Reveals errors that weren't dealt with
+        print(type(e))
+        print(e)        
