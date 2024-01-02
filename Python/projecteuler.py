@@ -73,55 +73,55 @@
 
 # print(palindromeList[-1])
 
-#Problem 5
-def GenNumList(lstRange):
-    divRangeList=[]
-    for numAdded in range(lstRange):
-        divRangeList.append(numAdded+1)
-    return divRangeList
+# #Problem 5
+# def GenNumList(lstRange):
+#     divRangeList=[]
+#     for numAdded in range(lstRange):
+#         divRangeList.append(numAdded+1)
+#     return divRangeList
 
-def IsDivByList(num,list):
-    print(" ")
-    for i in list:
-        print(f'num:{num}, i:{i}')
-        if num%i!=0:
-            return False
-    return True
+# def IsDivByList(num,list):
+#     print(" ")
+#     for i in list:
+#         print(f'num:{num}, i:{i}')
+#         if num%i!=0:
+#             return False
+#     return True
 
-def MinDiv(divRange):
-    divList=GenNumList(divRange)
-    print(divList)
+# def MinDiv(divRange):
+#     divList=GenNumList(divRange)
+#     print(divList)
     
-    checkNum=2520
-    numFound=False
-    while (numFound==False):
-        if IsDivByList(checkNum,divList):
-            numFound=True
-        else:
-            checkNum+=2520
-    return checkNum
+#     checkNum=2520
+#     numFound=False
+#     while (numFound==False):
+#         if IsDivByList(checkNum,divList):
+#             numFound=True
+#         else:
+#             checkNum+=2520
+#     return checkNum
         
-print(MinDiv(20))
+# print(MinDiv(20))
 
-#Problem 6
-def CreateList(num):
-    list=[]
-    for i in range(num):
-        list.append(i+1)
-    return list  
+# #Problem 6
+# def CreateList(num):
+#     list=[]
+#     for i in range(num):
+#         list.append(i+1)
+#     return list  
     
-def SquareSum(num):
-    list=CreateList(num)
-    total=0
-    for i in list:
-        total+=i**2
-    return total
+# def SquareSum(num):
+#     list=CreateList(num)
+#     total=0
+#     for i in list:
+#         total+=i**2
+#     return total
     
-def SumSquare(num):
-      list=CreateList(num)
-      total=0
-      for i in list:
-          total+=i
-      return total**2
+# def SumSquare(num):
+#       list=CreateList(num)
+#       total=0
+#       for i in list:
+#           total+=i
+#       return total**2
         
-print(SumSquare(100)-SquareSum(100)) 
+# print(SumSquare(100)-SquareSum(100)) 
