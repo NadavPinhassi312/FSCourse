@@ -335,5 +335,10 @@ Packages:
         In python terminal:
             from <packagename> import x, y, z - Imports said attributes from said package
     Modules:
-        Given 2 python files are in the same folder, you can import one from another and use the functions from the imported one in the one you imported to.
-    
+        Given 2 python files are in the same folder, you can import one from another and use the functions from the imported one in the one you imported to. The syntax is the same - from <packagename> import x, y, z, only packagename is the file's name.
+
+        MyPackage=package in the desktop
+        packagefile=file in the package
+
+        from MyPackage.packagefile import pack as func
+        func()
