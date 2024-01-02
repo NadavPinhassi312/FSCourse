@@ -342,3 +342,30 @@ Packages:
 
         from MyPackage.packagefile import pack as func
         func()
+
+        Given "add" is a function in packagefile, these are the same thing:
+            from MyPackage.packagefile import add
+            print(add(1,2))
+
+            from MyPackage import packagefile
+            print(packagefile.add(1,2))
+
+Name and Main:
+    If a program is run where it was written, meaning it wasn't imported, the value of __name__ would be "__main__".
+    Meaning, that's a way to check if a function is called from its original file or not. Example:
+    if __name__=="__main__":
+        do.something()
+
+Errors and Exceptions:
+    Errors and exceptions comtain of 3 keywords: try, except and finally. 
+    try - tries to execute the code.
+    except - tries to handle the error
+    finally - will always run no matter What
+
+    Example:
+        try:
+            total=10/0
+        except ZeroDivisionError:
+            total="N/A"
+        finally:
+            print("The total is ", total)
