@@ -50,4 +50,78 @@
 # print(biggestPrime(600851475143))
 
 # #Problem 4
-# i=
+# def isPalindrome(num):
+#     num=str(num)
+#     revNum=num[::-1]
+#     if num==revNum:
+#         return True
+#     else:
+#         return False
+    
+# i=100
+# palindromeList=[]
+# while i<1000:
+#     j=100
+#     while j<1000:
+#         mult=i*j
+#         if isPalindrome(mult):
+#             # print (f"{mult} is a palindrome!")
+#             palindromeList.append(mult)
+#         j+=1
+#     i+=1
+# palindromeList= sorted(list(set(palindromeList)))
+
+# print(palindromeList[-1])
+
+# #Problem 5
+# def GenNumList(lstRange):
+#     divRangeList=[]
+#     for numAdded in range(lstRange):
+#         divRangeList.append(numAdded+1)
+#     return divRangeList
+
+# def IsDivByList(num,list):
+#     print(" ")
+#     for i in list:
+#         print(f'num:{num}, i:{i}')
+#         if num%i!=0:
+#             return False
+#     return True
+
+# def MinDiv(divRange):
+#     divList=GenNumList(divRange)
+#     print(divList)
+    
+#     checkNum=2520
+#     numFound=False
+#     while (numFound==False):
+#         if IsDivByList(checkNum,divList):
+#             numFound=True
+#         else:
+#             checkNum+=2520
+#     return checkNum
+        
+# print(MinDiv(20))
+
+# #Problem 6
+# def CreateList(num):
+#     list=[]
+#     for i in range(num):
+#         list.append(i+1)
+#     return list  
+    
+# def SquareSum(num):
+#     list=CreateList(num)
+#     total=0
+#     for i in list:
+#         total+=i**2
+#     return total
+    
+# def SumSquare(num):
+#       list=CreateList(num)
+#       total=0
+#       for i in list:
+#           total+=i
+#       return total**2
+        
+# print(SumSquare(100)-SquareSum(100)) 

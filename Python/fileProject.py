@@ -1,11 +1,24 @@
-sentence = input("Enter a sentence: ")
-sentenceLength=len(sentence)
+person={
+    "name":"Nadav"
+}
 
-fileName=input("Enter the file's name: ")
-fileName=f"{fileName}.txt"
+try:
+    print(person["fav_food"])
+except KeyError as e:
+    print(f'The key {e} doesnt exist.')
+except ZeroDivisionError:
+    print("Cannot divide by zero")
+except Exception as e:
+    print(type(e))
+    print(e)
 
-with open(fileName,"w") as f:
-    f.write(sentence)
-    f.close()
 
-print(f"You've written {sentenceLength} characters to {fileName}")
+
+
+
+
+
+
+
+
+

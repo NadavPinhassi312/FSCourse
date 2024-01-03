@@ -234,4 +234,150 @@ Lambda Expressions (Anonymous Functions):
         powerOf=lambda num,power:num**power
         print(powerOf(2,3))
     
+Objects (classes):
+    Attributes and methods:
+
     
+    Class Inheritance:
+        A way to create a sub-class of a bigger one. Example:
+        class Animal:
+            def __init__(self,name,weight):
+                self.name=name
+                self.weight=weight
+            def speak(self):
+                print("Animal sound")
+
+        class Cat(Animal):
+            def speak(self):
+                print("Meow")
+
+        kvishi = Cat("Kvishi","10kg")
+        kvishi.speak()
+
+        class Dog(Animal):
+            def speak(self):
+                print("Woof Woof")
+
+        shpits=Dog("Shpits","35kg")
+        shpits.speak()
+    
+    Class Interfaces:
+        class Animal:
+            def __init__(self,name,weight):
+                self.name=name
+                self.weight=weight
+            def speak(self):
+                raise NotImplementedError("Not implemented, please add an animal sound")
+
+        class Fish(Animal):
+            def breath(self):
+                print("blub blub")
+
+        nemo=Fish("Nemo","0.3kg")
+        nemo.breath()
+        nemo.speak()
+
+    The Super Function:
+        A method used in a sub-class method that allows you to use the original method it's inheriting from.
+        class Animal:
+            def __init__(self,name,weight):
+                self.name=name
+                self.weight=weight
+                self.legNum=4
+            def speak(self):
+                raise NotImplementedError("Not implemented, please add an animal sound")
+            def legNum(self):
+                return self.legNum
+
+        class Fish(Animal):
+            def breath(self):
+                print("blub blub")
+            def HowManyLegs(self):
+                print(super().legNum()-4)
+
+        class Dog(Animal):
+            def HowManyLegs(self):
+                print(super().legNum())
+
+        shpits=Dog("Shpits",35)
+        shpits.HowManyLegs()
+
+        gizmo=Fish("Gizmo",0.3)
+        gizmo.HowManyLegs()
+    
+    Dunder Methods:
+        Methods which begin and end with double underscores, AKA dunders.
+        class Book:
+            def __init__(self,name,pages,content):
+                self.name=name
+                self.pages=int(pages)
+                self.content=content
+            
+            def __str__(self):
+                return self.name #changes the name of the object via print(objectName)
+            
+            def __len__(self):
+                words=self.content.split()
+                return len(words) #returns the length of the object as defined
+            
+
+        percyJackson=Book("Percy Jackson", 300, "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.")
+
+        print(percyJackson.__str__())
+        print(percyJackson.__len__())
+
+Packages:
+    Commands:
+        In terminal:
+            pip install packagename -> Installs said package on the computer
+            pip uinstalls packagename -> uninstalls said package
+            pip freeze -> Gives you a list of all the packages installed
+        In python terminal:
+            from <packagename> import x, y, z - Imports said attributes from said package
+    Modules:
+        Given 2 python files are in the same folder, you can import one from another and use the functions from the imported one in the one you imported to. The syntax is the same - from <packagename> import x, y, z, only packagename is the file's name.
+
+        MyPackage=package in the desktop
+        packagefile=file in the package
+
+        from MyPackage.packagefile import pack as func
+        func()
+
+        Given "add" is a function in packagefile, these are the same thing:
+            from MyPackage.packagefile import add
+            print(add(1,2))
+
+            from MyPackage import packagefile
+            print(packagefile.add(1,2))
+
+Name and Main:
+    If a program is run where it was written, meaning it wasn't imported, the value of __name__ would be "__main__".
+    Meaning, that's a way to check if a function is called from its original file or not. Example:
+    if __name__=="__main__":
+        do.something()
+
+Errors and Exceptions:
+    Errors and exceptions comtain of 3 keywords: try, except and finally. 
+    try - tries to execute the code.
+    except - tries to handle the error
+    finally - will always run no matter What
+
+    Example:
+        try:
+            total=10/0
+        except ZeroDivisionError:
+            total="N/A"
+        finally:
+            print("The total is ", total)
+        
+    Catching exceptions:
+    A way to catch an error and respond to it, having the error not crashing the whole program. Example:
+    try:
+        print(person["fav_food"])
+    except KeyError as e:
+        print(f'The key {e} doesnt exist.')
+    except ZeroDivisionError:
+        print("Cannot divide by zero")
+    except Exception as e: --> Reveals errors that weren't dealt with
+        print(type(e))
+        print(e)        
