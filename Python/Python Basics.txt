@@ -237,7 +237,6 @@ Lambda Expressions (Anonymous Functions):
 Objects (classes):
     Attributes and methods:
 
-    
     Class Inheritance:
         A way to create a sub-class of a bigger one. Example:
         class Animal:
@@ -345,7 +344,7 @@ Packages:
 
         Given "add" is a function in packagefile, these are the same thing:
             from MyPackage.packagefile import add
-            print(add(1,2))
+            print(add(1,2))zx
 
             from MyPackage import packagefile
             print(packagefile.add(1,2))
@@ -381,3 +380,5 @@ Errors and Exceptions:
     except Exception as e: --> Reveals errors that weren't dealt with
         print(type(e))
         print(e)        
+
+Unit Tests:
