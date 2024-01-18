@@ -1,2 +1,2 @@
 def MakeUpper(text):
-    return text.upper
+    return text.upper()
