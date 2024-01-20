@@ -382,3 +382,68 @@ Errors and Exceptions:
         print(e)        
 
 Unit Tests:
+    A way to test whether a function works using the unittest library. Example:
+    (pyfolder.py)
+    def MakeUpper(text):
+        return text.upper()
+
+    def ReturnAList():
+        return ["cats","dogs","birds"]
+    
+    (tests.py)
+    import unittest
+    from pyfolder import MakeUpper, ReturnAList
+
+    class TestMyProgram(unittest.TestCase):
+        def test_function(self):
+            result=MakeUpper("Hello World")
+            self.assertEqual(result,'HELLO WORLD')
+        
+        def test_list(self):
+            result=ReturnAList()
+            self.assertListEqual(result,["cas","dogs","birds"], "Wrong list!")
+            
+    if __name__=="__main__":
+        unittest.main()
+
+Nested Functions:
+    Functions inside functions. Example:
+    def main_func():
+        print("main function")
+
+        def second_function():
+            print("second function")
+    The interesting part is returning a function - you can assign the variable's value to be a function insted of a regular value. Example:
+    def parent(name="Henry"):
+        print(f"parent() was run with {name}")
+
+        def child():
+            return 159
+        
+        return child
+
+    var = parent()
+
+    var is now a function - it can be called using var() and will return 159, because it is child.
+
+Decorators:
+    A way to interact with a function and make it do more things than it was intended to do. The syntax is @decorator and it is placed above the function. Example: 
+    def PowerOfTwo(original_function):
+        def wrapper():
+            value=original_function()
+            print(f"The original value was: {value}")
+            value**=2
+            print(f"The current value is: {value}")
+            return value
+        
+        return wrapper 
+
+    @PowerOfTwo
+    def number():
+        return 2
+
+    print(number())
+    Output:
+    The original value was: 2
+    The current value is: 4
+    4 
