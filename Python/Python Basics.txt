@@ -447,3 +447,26 @@ Decorators:
     The original value was: 2
     The current value is: 4
     4 
+
+Generators:
+    A way to use data without storing it. A good example would be range(x) - you can use the numbers from 0 to x, but they aren't stored in any list or variable - they are used one at a time and then thrown away. A generator can only be used once, and then it's exausted and has to be called again. Example and syntax:
+
+    def times_four(n): #gives you a list from 0 to n of the numbers times 4. 
+        for number in range(n):
+            yield number*4
+
+    numbers=times_four(5)
+
+    print(numbers) #prints the type of numbers - will print <generator object times_four at 0x000002B08ECACEE0>
+
+    for num in numbers:
+        print("first time "+str(num))#Will print 0, 4, 8, 12, 16 (in seperate lines)
+
+    for num in numbers:
+        print("second time "+str(num))#Will not print! The generator is exausted. Numbers is a disposable variable.
+
+    numbers=times_four(5)
+    for num in numbers:
+        print("third time "+str(num))
+
+    A generator will be used when the information used is not important enough to be stored.
