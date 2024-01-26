@@ -470,3 +470,9 @@ Generators:
         print("third time "+str(num))
 
     A generator will be used when the information used is not important enough to be stored.
+
+Linting:
+    Making your code look nicer. Kalob showed 3 packages that "fix" your code:
+        - isort - Sorts your imports and organisez them
+        - flake8 - Will tell you all of your problems, which you can go and manually fix
+        - black -Will automatically fix your code, according to its standarts.
