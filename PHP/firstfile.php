@@ -125,7 +125,29 @@ function FuncName(){
 </form>
 <?php
 echo date("F");
+echo "<br>";
 
 
+//Cookies!
+// // Creating a Cookie
+// Cookies are temporary data stored in expiring super global variables. The syntax is as following:
+// setcookie($name,$vakue,$expires,$path,$domain,$secure,$httponly);
+// $name - The name of the cookie, a string value. Example: "TCWD_Cookie";
+// $value - The value of the cookie, a string. Similar to variable value. Optional.
+// $expires - The time of when the cookie expires, an integer. Its best to use time() with this parameter. Example: time() + 60*60*24*30 - sets the cookie to expire in 30 days. If set to 0 or not set, the cookie will expire at the end of the session. Optional.
+// $path - The path on the server in which the cookie is allowed access. If set to "/" then the cookie is allowed on the entire website. If set to "/directory/" then the cookie can only be accessed in the directory, called "/directory/ ". Optional.
+// $domain - The domain that the cookie is available to, a string. Setting the domain to 'www.example.com' will make the cookie available in the www subdomain and higher subdomains.
+// $httponly - A boolean, set to true if you want this cookie to be accessable ONLY through the HTTP protocol, meaning this cookie cannot be accessed through JS.
+// //Accessing a Cookie
+// Just like a const.
+// echo $_COOKIE['cookieName'];
+// //Destroying a cookie
+// You have to reaassign the cookie - the same name but remove the value and set the time to the past. Example: 
+// setcookie("cookieName","",time()-3600);
+setcookie("cookieName",'This is my first cookie!', time()+3600);
+echo $_COOKIE['cookieName'];
+echo "<br>";
+// setcookie("cookieName",'', time()-3600);
+// echo $_COOKIE['cookieName'];
 
 ?>
