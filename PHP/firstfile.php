@@ -148,6 +148,15 @@ setcookie("cookieName",'This is my first cookie!', time()+3600);
 echo $_COOKIE['cookieName'];
 echo "<br>";
 // setcookie("cookieName",'', time()-3600);
-// echo $_COOKIE['cookieName'];
-
+// echo $_COOKIE['cookieName']
 ?>
+
+<!-- Uploading Files -->
+<form method='post' action='upload.php' enctype='multipart/form-data'>
+    <input type='file' name='uploadFile'/>
+    <input type='submit' value='Upload File'/>
+</form>
+<!-- Creating New Files -->
+<form method='post' action='fopen.php' enctype='multipart/form-data'>
+    <input type='submit' value='Create File'/>
+</form>
