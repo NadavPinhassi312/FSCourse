@@ -125,3 +125,33 @@
 #       return total**2
         
 # print(SumSquare(100)-SquareSum(100)) 
+
+# Problem 7
+def isPrime(num):
+    halfNumList=[]
+    half=num/2
+    if int(half)%2==0.0:
+        half=int(half)
+    else:
+        half=half+0.5
+        half=int(half)
+    for i in range(2,half+1):
+        halfNumList.append(i)
+    for i in halfNumList:
+        if num%i==0:
+            return True
+    return False
+    
+def listOfPrimes(num):
+    primeList=[]
+    while(len(primeList)<num):
+        i=0
+        if isPrime(i):
+            primeList.append(i)
+            print(primeList)
+        i+=1
+    print(primeList)
+
+print(listOfPrimes(100))
+
+
