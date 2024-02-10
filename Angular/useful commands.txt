@@ -1,2 +1,3 @@
 ng new <projectname> --no-strict --standalone false --routing false
 ng serve - starts the local server
+ng g c <componentname> - Generates a new component (g c = generate component)
