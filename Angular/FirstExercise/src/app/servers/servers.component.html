@@ -11,8 +11,8 @@
 <p *ngIf="serverCreated">
     The {{serverName}} server was created!
 </p>
-<app-server></app-server>
-<app-server></app-server>
+<app-server *ngFor="let server of servers"></app-server>
+
 
 <hr>
 <h3>Assignment 2 Solution</h3>
@@ -21,3 +21,9 @@
     {{username}}
 </p>
 <button class="btn" [disabled]="username==''" (click)="clearName()">Clear Name</button>
+
+<hr>
+<h3>Assignment 3 Solution</h3>
+<button class="btn btn-primary" (click)="onBtnClick()">Display Details</button>
+<p *ngIf="btnClicked">Secret message!</p>
+<p>{{this.btnClicked}}</p>

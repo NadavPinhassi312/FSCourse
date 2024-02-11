@@ -11,6 +11,9 @@ export class ServersComponent {
   serverName="";
   username="";
   serverCreated=false;
+  servers=[]
+  btnClicked=false;
+
   constructor(){
     setTimeout(()=>{
       this.allowNewServer=true;
@@ -19,6 +22,7 @@ export class ServersComponent {
 
   onCreateServer(){
     this.serverCreated=true;
+    this.servers.push(this.serverName)
     this.serverCreationStatus="Server was created! Name is " + this.serverName+".";
   }
   onUpdateServerName(event: Event){
@@ -26,5 +30,15 @@ export class ServersComponent {
   }
   clearName(){
     this.username="";
+  }
+
+  onBtnClick(){
+    if (this.btnClicked==false){
+      this.btnClicked=true
+    }
+    else if (this.btnClicked==true){
+      this.btnClicked=false
+    }
+    
   }
 }

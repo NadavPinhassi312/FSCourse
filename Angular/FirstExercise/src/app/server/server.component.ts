@@ -4,7 +4,11 @@ import { ServersComponent } from "../servers/servers.component";
 @Component({
     selector: 'app-server',
     templateUrl:'./server.component.html',
-    styleUrl: './server.component.css'
+    styles:[`
+    .online{
+        color:white;
+    }
+    `]
 })
 export class ServerComponent{
     serverID=10;
