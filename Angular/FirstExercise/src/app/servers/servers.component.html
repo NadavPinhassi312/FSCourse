@@ -8,8 +8,8 @@
     [disabled]="!allowNewServer" 
     (click)="onCreateServer()">Add Server</button>
 </p>
-<p>
-    {{serverCreationStatus}}
+<p *ngIf="serverCreated">
+    The {{serverName}} server was created!
 </p>
 <app-server></app-server>
 <app-server></app-server>
@@ -20,5 +20,4 @@
 <p>
     {{username}}
 </p>
-
 <button class="btn" [disabled]="username==''" (click)="clearName()">Clear Name</button>
