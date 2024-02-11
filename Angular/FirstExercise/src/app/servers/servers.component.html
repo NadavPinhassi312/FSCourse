@@ -26,4 +26,8 @@
 <h3>Assignment 3 Solution</h3>
 <button class="btn btn-primary" (click)="onBtnClick()">Display Details</button>
 <p *ngIf="btnClicked">Secret message!</p>
-<p>{{this.btnClicked}}</p>
+<p 
+*ngFor="let log of logs; let i = index"
+[ngStyle]="{backgroundColor: (i+1) > 4 ? 'blue' : 'transparent'}"
+[ngClass]="{'textColorWhite': (i+1) > 4}"
+ >{{log}}</p>

@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-servers',
   templateUrl: './servers.component.html',
-  styles: ['.online{background-color:white;}']
+  styleUrl: './servers.component.css'
 })
 export class ServersComponent {
   allowNewServer=false;
@@ -13,7 +13,8 @@ export class ServersComponent {
   serverCreated=false;
   servers=[]
   btnClicked=false;
-
+  logs=[];
+  logsValue=1;
   constructor(){
     setTimeout(()=>{
       this.allowNewServer=true;
@@ -33,12 +34,16 @@ export class ServersComponent {
   }
 
   onBtnClick(){
-    if (this.btnClicked==false){
-      this.btnClicked=true
-    }
-    else if (this.btnClicked==true){
-      this.btnClicked=false
-    }
+    this.btnClicked==false ? this.btnClicked=true :this.btnClicked=false
+    this.logs.push(this.logsValue);
+    this.logsValue++;
     
   }
+  backgroundAboveFour(){
+    return this.logsValue>5 ? "blue":"white";
+  }
+  logsAboveFour(){
+    return this.logsValue>5 ? true: false;
+  }
+  
 }
