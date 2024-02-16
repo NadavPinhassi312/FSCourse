@@ -40,10 +40,10 @@ export class ServersComponent {
     
   }
   backgroundAboveFour(){
-    return this.logsValue>5 ? "blue":"white";
+    return this.logsValue>5 ? "blue" : "white";
   }
   logsAboveFour(){
-    return this.logsValue>5 ? true: false;
+    return this.logsValue>5 ? true : false;
   }
   
 }
