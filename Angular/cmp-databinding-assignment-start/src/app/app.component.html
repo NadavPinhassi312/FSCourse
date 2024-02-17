@@ -20,8 +20,8 @@
       <app-game-control (arrayCreated)="onNumberAdded($event)"></app-game-control>
     </div>
     <div class="col-xs-6">
-      <app-even></app-even>
-      <app-odd></app-odd>
+      <app-even *ngFor="let num of evenArray" [num]="num"></app-even>
+      <app-odd *ngFor="let num of oddArray" [num]="num"></app-odd>
     </div>
   </div>
 </div>

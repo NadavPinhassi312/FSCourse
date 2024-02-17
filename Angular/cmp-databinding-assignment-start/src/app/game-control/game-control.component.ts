@@ -23,8 +23,7 @@ export class GameControlComponent {
   }
   onClickedStop(){
     clearInterval(this.myInterval);
-    this.numbers=[]
-    this.num=1
+    location.reload()
   }
 
 }
