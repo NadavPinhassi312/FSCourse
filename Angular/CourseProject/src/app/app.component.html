@@ -1,9 +1,9 @@
-<app-header></app-header>
+<app-header (navUpdated)="onNavUpdated($event)"></app-header>
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <app-recipes></app-recipes>
-            <app-shopping-list></app-shopping-list>
+            <app-recipes *ngIf="status=='Recipes'"></app-recipes>
+            <app-shopping-list *ngIf="status!='Recipes'"></app-shopping-list>
         </div>
     </div>
 </div>
