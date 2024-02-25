@@ -1,5 +1,4 @@
-import { Injectable } from "@angular/core";
-
 export class UserService{
-    
+    activeUsers = ['Max', 'Anna'];
+    inactiveUsers = ['Chris', 'Manu'];
 }
