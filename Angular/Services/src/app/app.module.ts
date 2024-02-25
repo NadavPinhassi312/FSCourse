@@ -19,7 +19,7 @@ import { AccountService } from './accounts.service';
     BrowserModule,
     FormsModule,
   ],
-  providers: [LoggingService],
+  providers: [AccountService, LoggingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

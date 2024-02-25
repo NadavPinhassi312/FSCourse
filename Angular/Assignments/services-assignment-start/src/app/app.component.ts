@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { UserService } from './userService.service';
+import { UserService } from './user.service';
 
 @Component({
   selector: 'app-root',
@@ -8,16 +8,12 @@ import { UserService } from './userService.service';
   providers:[UserService]
 })
 export class AppComponent {
-  activeUsers = ['Max', 'Anna'];
-  inactiveUsers = ['Chris', 'Manu'];
-
-  onSetToInactive(id: number) {
-    this.inactiveUsers.push(this.activeUsers[id]);
-    this.activeUsers.splice(id, 1);
+  activeUsers: string[]=[];
+  inactiveUsers: string[]=[];
+  constructor(private userService:UserService){};
+  ngOnInit(){
+    this.activeUsers=this.userService.activeUsers;
+    this.inactiveUsers=this.userService.inactiveUsers;
   }
-
-  onSetToActive(id: number) {
-    this.activeUsers.push(this.inactiveUsers[id]);
-    this.inactiveUsers.splice(id, 1);
-  }
+  
 }
