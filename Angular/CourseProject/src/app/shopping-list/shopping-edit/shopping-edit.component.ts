@@ -1,5 +1,4 @@
-import { Component, ElementRef, ViewChild, Output, EventEmitter } from '@angular/core';
-import { Ingredient } from '../../shared/ingredient.model';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { ShoppingListService } from '../shopping-list.service';
 
 @Component({
@@ -16,8 +15,7 @@ export class ShoppingEditComponent {
   onAddPressed(){
     const name = this.ingredientNameInput.nativeElement.value;
     const amount = this.ingredientAmountInput.nativeElement.value;
-    const ingredient = new Ingredient(name, amount);
-    this.shoppingListService.onIngredientAdded(ingredient);
+    this.shoppingListService.onIngredientAdded({name, amount});
   }
   
   onDeletePressed(){
