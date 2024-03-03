@@ -14,10 +14,11 @@ export class ShoppingListService{
     } 
 
     addToList(ingredients: Ingredient[]){
-      for (let i = 0; i < ingredients.length; i++) {
-        // console.log (ingredients[i].name, ingredients[i].amount);
-        this.ingredients.push(ingredients[i])
-      }
+      // for (let i = 0; i < ingredients.length; i++) {
+      //   // console.log (ingredients[i].name, ingredients[i].amount);
+      //   this.ingredients.push(ingredients[i])
+      // }
+      this.ingredients.push(...ingredients);
 
 
     }
