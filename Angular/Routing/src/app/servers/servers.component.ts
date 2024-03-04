@@ -20,4 +20,8 @@ export class ServersComponent implements OnInit {
     this.router.navigate(['/servers'], {relativeTo: this.route})
   }
 
+  sendCurrentID(id:number){
+    this.serversService.id=id;
+  }
+
 }

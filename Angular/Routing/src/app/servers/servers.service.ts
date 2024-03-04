@@ -41,4 +41,10 @@ export class ServersService {
       server.status = serverInfo.status;
     }
   }
+
+  id:number=0;
+  getCurrentID(){
+    // alert(this.id);
+    return this.id
+  }
 }
