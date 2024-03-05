@@ -7,8 +7,7 @@
         fragment="loading"
         href="#"
         class="list-group-item"
-        *ngFor="let server of servers"
-        (click)="sendCurrentID(server.id)">
+        *ngFor="let server of servers">
         {{ server.name }}
       </a>
     </div>
@@ -17,7 +16,6 @@
     <button class="btn btn-primary" (click)="onReload()">Reload Page</button>
     <app-edit-server></app-edit-server>
     <hr>
-    <app-server></app-server>
+    <!-- <app-server></app-server> -->
   </div>
 </div>
-
