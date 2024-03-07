@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -12,12 +13,26 @@ export class HeaderComponent {
     this.navUpdated.emit(feature)
     
   }
-  navRecipesClicked(){
-    console.log("recipes clicked")
-    this.navUpdated.emit('Recipes');
+  constructor(private router: Router){}
+
+  navToRecipe(){
+    this.router.navigate(['recipes'])
+    console.log("nav to recipes");
   }
-  navShoppingListClicked(){
-    console.log("shopping list clicked")
-    this.navUpdated.emit('Shopping List');
+  
+  navToShoppingList(){
+    this.router.navigate(['shopping-list'])
+    console.log("nav to shopping list");
   }
+
+
+
+  // navRecipesClicked(){
+  //   console.log("recipes clicked")
+  //   this.navUpdated.emit('Recipes');
+  // }
+  // navShoppingListClicked(){
+  //   console.log("shopping list clicked")
+  //   this.navUpdated.emit('Shopping List');
+  // }
 }
