@@ -1,8 +1,0 @@
-CMD commands:
-ng new <projectname> --no-strict --standalone false --routing false -> opens a project
-ng serve -> starts the local server
-npm install --save bootstrap@3 -> installs bootstrap
-angular.json->styles->add "node_modules/bootstrap/dist/css/bootstrap.min.css" to styles.
-ng g c <componentname> -> Generates a new component (g c = generate component)
-ng g d <directivename> -> Generates a new directive
-another useful command!
