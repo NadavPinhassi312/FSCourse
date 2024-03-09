@@ -7,8 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   status:string="Recipes";
-  
-  onNavUpdated(str){
-    this.status=str;
-  }
 }

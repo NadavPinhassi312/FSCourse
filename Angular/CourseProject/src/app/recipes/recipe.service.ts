@@ -30,4 +30,26 @@ export class RecipeService{
       getRecipes(){
         return this.recipes.slice();
       }
-}
+
+      getIDByName(name: String){
+        for (let i=0; i<this.recipes.length; i++ ){
+          if (this.recipes[i].name==name){
+            return i
+          }
+        }
+        return null;
+      }
+      getRecipeByID(id: number){
+        return this.recipes[id];
+      }
+  }
+
+
+      // getRecipeByName(name: String){
+      //     for (let i=0; i<this.recipes.length; i++ ){
+      //         if (this.recipes[i].name==name){
+      //             return this.recipes[i]
+      //           }
+      //         }
+      //         return null;
+      //       }

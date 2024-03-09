@@ -12,7 +12,7 @@ import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-ed
 import { DropdownDirective } from './shared/dropdown.directive';
 import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { AppRoutingModule } from './app-routing.module';
-import { NewRecipeComponent } from './recipes/new-recipe/new-recipe.component';
+import { RecipesStartComponent } from './recipes/recipes-start/recipes-start.component';
 
 
 
@@ -29,7 +29,7 @@ import { NewRecipeComponent } from './recipes/new-recipe/new-recipe.component';
     RecipeItemComponent,
     ShoppingEditComponent,
     DropdownDirective,
-    NewRecipeComponent
+    RecipesStartComponent,
   ],
   imports: [
     BrowserModule,
