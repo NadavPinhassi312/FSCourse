@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 
@@ -8,8 +8,11 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./app.component.css'] // Use styleUrls with an 's' instead of styleUrl
 })
 export class AppComponent {
+  @ViewChild('f') form:NgForm;
+  defaultSubscription='advanced'
+
   onSubmit(){
-    
+    console.log(this.form)
   }
 }
 

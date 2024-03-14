@@ -22,12 +22,23 @@
           class="form-control" 
           name="email" 
           ngModel 
+          email
           #email="ngModel" 
           required>
-        <span *ngIf="email.touched">Invalid Email</span>
+        <span *ngIf="email.invalid && email.touched">Invalid Email</span>
       </div>
-
-        <!-- dropdown menu -->
+      <div class="form-group">
+        <label for="subscription">Subscription</label>
+        <select 
+          id="subscription" 
+          class="form-control"
+          [ngModel]='defaultSubscription'
+          name="subscription">
+          <option value="basic">Basic</option>
+          <option value="advanced">Advanced</option>
+          <option value="pro">Pro</option>
+        </select>
+      </div>
       <div class="form-group">
         <label for="Password">Enter password here:</label>
         <input 
@@ -35,12 +46,13 @@
           class="form-control" 
           name="password" 
           ngModel 
+          password
           #password="ngModel" 
           required>
         <span *ngIf="password.invalid && password.touched">Invalid Password</span>
       </div>
-
-        <button class="btn btn-primary" type="submit" (click)="onSubmit()">Submit</button>
+      <div *ngIf="f.invalid && f.touched">Form is invalid and was touched!</div>
+      <button class="btn btn-primary" type="submit" [disabled]="!f.valid" (click)="onSubmit()">Submit</button>
      </form>
     </div>
   </div>
