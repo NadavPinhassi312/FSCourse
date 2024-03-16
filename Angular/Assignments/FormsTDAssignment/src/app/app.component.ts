@@ -9,10 +9,14 @@ import { NgForm } from '@angular/forms';
 })
 export class AppComponent {
   @ViewChild('f') form:NgForm;
-  defaultSubscription='advanced'
+  subscriptions: string[]=['Basic', 'Advanced', 'Pro'];
+  defaultSubscription='Advanced'
+  
 
   onSubmit(){
-    console.log(this.form)
+    console.log(this.form.value)
+    this.form.reset();
+
   }
 }
 

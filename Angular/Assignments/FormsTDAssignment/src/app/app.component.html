@@ -14,7 +14,7 @@
            Optionally, display it in your template. -->
      <h3>TD Forms Exercise!</h3>
      <hr>
-     <form #f="ngForm">
+     <form #f="ngForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
         <label for="email">Enter your email address:</label>
         <input 
@@ -25,18 +25,20 @@
           email
           #email="ngModel" 
           required>
-        <span *ngIf="email.invalid && email.touched">Invalid Email</span>
+        <span class="help-block"*ngIf="email.invalid && email.touched">Invalid Email</span>
       </div>
       <div class="form-group">
         <label for="subscription">Subscription</label>
         <select 
           id="subscription" 
+          name="subscription"
           class="form-control"
-          [ngModel]='defaultSubscription'
-          name="subscription">
-          <option value="basic">Basic</option>
+          ngModel
+          [ngModel]="defaultSubscription">
+          <!-- <option value="basic">Basic</option>
           <option value="advanced">Advanced</option>
-          <option value="pro">Pro</option>
+          <option value="pro">Pro</option> -->
+          <option *ngFor="let subscription of subscriptions" [value]="subscription"> {{subscription}} </option>
         </select>
       </div>
       <div class="form-group">
@@ -49,10 +51,10 @@
           password
           #password="ngModel" 
           required>
-        <span *ngIf="password.invalid && password.touched">Invalid Password</span>
+        <span *ngIf="password.invalid && password.touched" class="help-block">Invalid Password</span>
       </div>
-      <div *ngIf="f.invalid && f.touched">Form is invalid and was touched!</div>
-      <button class="btn btn-primary" type="submit" [disabled]="!f.valid" (click)="onSubmit()">Submit</button>
+      <div *ngIf="f.invalid && f.touched" class="help-block">Form is invalid and was touched!</div>
+      <button class="btn btn-primary" type="submit" [disabled]="!f.valid">Submit</button>
      </form>
     </div>
   </div>
