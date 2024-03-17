@@ -24,7 +24,7 @@
             formControlName="name"
             class="form-control">
         </div>
-        <span class="help-block" *ngIf="assForm.get('name').invalid && assForm.get('name').touched">Enter a name!</span>
+        <span class="help-block" *ngIf="assForm.get('name').invalid && assForm.get('name').touched">Enter a proper name!</span>
         <div class="form-group">
           <label for="email">Enter Your Email:</label>
           <input 
@@ -41,7 +41,9 @@
             id="status" 
             class="form-control"
             formControlName="status">
-            <option *ngFor="let status of statusArray">{{ status }}</option>
+            <option value="stable">Stable</option>
+            <option value="critical">Critical</option>
+            <option value="finished">Finished</option>
           </select>
         </div>
         <button class="btn btn-primary" type="submit">Submit</button>
