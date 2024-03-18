@@ -38,7 +38,7 @@ export class ShoppingEditComponent implements OnInit, OnDestroy{
     
   }
 
-  onAddPressed(form:NgForm){
+  onSubmit(form:NgForm){
     const value = form.value
     const newIngredient = new Ingredient(value.name, value.amount)
     if (this.editMode) {
@@ -48,12 +48,13 @@ export class ShoppingEditComponent implements OnInit, OnDestroy{
     else {
       this.shoppingListService.onIngredientAdded(newIngredient);
     }
+    this.slForm.reset();
   }
   
-  onDeletePressed(){
+  onDelete(){
 
   }
-  onClearPressed(){
+  onClear(){
 
   }
   
