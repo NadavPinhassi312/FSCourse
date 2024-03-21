@@ -31,11 +31,16 @@ export class RecipeDetailComponent {
     
     
   }
+  toShoppingList(){
+    this.shoppingListService.addToList(this.recipe.ingredients);
+  }
+
   editRecipe() {
     this.router.navigate(['/recipes', this.id, 'edit']);
   }
 
-  toShoppingList(){
-    this.shoppingListService.addToList(this.recipe.ingredients);
+  deleteRecipe() { 
+    this.recipeService.deleteRecipe(this.id)
+    this.router.navigate(['/recipes'])
   }
 }
