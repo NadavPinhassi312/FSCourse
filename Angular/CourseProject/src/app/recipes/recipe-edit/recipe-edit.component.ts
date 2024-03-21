@@ -68,10 +68,17 @@ export class RecipeEditComponent {
     return (<FormArray>this.recipeForm.get('ingredients')).controls;
   }
 
-
-
   onCancel() {
     this.router.navigate(['/recipes', this.id])
+  }
+
+  onAddIngredient() {
+    (<FormArray>this.recipeForm.get('ingredients')).push(
+      new FormGroup({
+        'name': new FormControl(),
+        'amount': new FormControl()
+      })
+    )
   }
 
 }
