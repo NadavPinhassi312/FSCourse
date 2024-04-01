@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders, HttpParams } from "@angular/common/http";
+import { HttpClient, HttpEventType, HttpHeaders, HttpParams } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Post } from "./post.model";
 import { map, catchError, tap } from "rxjs/operators";
@@ -57,10 +57,19 @@ export class PostsService {
 
     deletePosts() {
         return this.http.delete('https://ng-complete-guide-e2d96-default-rtdb.firebaseio.com/posts.json',
-        {
-            observe:'events'
-        }).pipe(tap(event => {
-            console.log(event);
-        }));
+            {
+                observe: 'events',
+                responseType: 'text' //Turns the response type, AKA the body, into text.
+            })
+            .pipe(tap(event => {
+                console.log(event);
+                if (event.type === HttpEventType.Sent) {
+                    //...
+                }
+                if (event.type === HttpEventType.Response) {
+                    console.log(event.body);
+                }
+
+            }));
     }
 }
