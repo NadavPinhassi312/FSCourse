@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { Router } from '@angular/router';
+import { DataStorageService } from '../shared/data-storage.service';
 
 @Component({
   selector: 'app-header',
@@ -7,22 +8,10 @@ import { Router } from '@angular/router';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
-  @Output() navUpdated = new EventEmitter<string>();
-  
-  navClicked(feature: string){
-    this.navUpdated.emit(feature)
-    
-  }
-  constructor(private router: Router){}
+  constructor(private router: Router, private dataStorageService: DataStorageService){}
 
-  navToRecipe(){
-    this.router.navigate(['recipes'])
-    console.log("nav to recipes");
-  }
-  
-  navToShoppingList(){
-    this.router.navigate(['shopping-list'])
-    console.log("nav to shopping list");
+  onSaveData() {
+    this.dataStorageService.storeRecipes();
   }
 
 
