@@ -75,6 +75,7 @@ export class RecipeEditComponent {
     }
     else {
       this.recipeService.addRecipe(newRecipe)
+      this.router.navigate(['/recipes'])
     }
   }
   
