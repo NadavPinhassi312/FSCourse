@@ -1,7 +1,7 @@
 import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { catchError, tap } from "rxjs/operators";
-import { Subject, throwError } from "rxjs";
+import { BehaviorSubject, throwError } from "rxjs";
 import { User } from "./user.model";
 
 export interface AuthResponseData {
@@ -15,8 +15,9 @@ export interface AuthResponseData {
 }
 
 @Injectable({ providedIn: 'root' })
+
 export class AuthService {
-    user = new Subject<User>();
+    user = new BehaviorSubject<User>(null);
 
     constructor(private http: HttpClient) { }
     signup(email: string, password: string) {
@@ -28,6 +29,7 @@ export class AuthService {
             }
         ).pipe(catchError(this.handleError),
             tap(resData => {
+                
                 this.handleAuthentication(
                     resData.email,
                     resData.localId,
@@ -36,6 +38,8 @@ export class AuthService {
                 )
             })
         );
+
+        
     }
 
     login(email: string, password: string) {
@@ -46,7 +50,7 @@ export class AuthService {
                 returnSecureToken: true
             }
         ).pipe(catchError(this.handleError)
-            , tap(resData => {
+            ,tap(resData => {
                 this.handleAuthentication(
                     resData.email,
                     resData.localId,
@@ -68,7 +72,7 @@ export class AuthService {
         )
         this.user.next(user);
     }
-
+    
 
     private handleError(errorRes: HttpErrorResponse) {
         let errorMessage = 'An unknown error occurred!'
@@ -87,6 +91,9 @@ export class AuthService {
                 break;
             case 'INVALID_PASSWORD':
                 errorMessage = 'This password is not correct.';
+                break;
+            case 'ERR_NAME_NOT_RESOLVED':
+                errorMessage = 'No internet connection.';
                 break;
         }
         return throwError(errorMessage)

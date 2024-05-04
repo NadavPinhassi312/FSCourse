@@ -1,16 +1,26 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataStorageService } from '../shared/data-storage.service';
 import { RecipeService } from '../recipes/recipe.service';
 import { Recipe } from '../recipes/recipe.model';
+import { AuthService } from '../Auth/auth.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrl: './header.component.css'
-})
-export class HeaderComponent {
-  constructor(private router: Router, private dataStorageService: DataStorageService){}
+  templateUrl: './header.component.html'})
+
+export class HeaderComponent implements OnInit, OnDestroy{
+  isAuthenticated: boolean = false;
+  private userSub: Subscription
+
+  constructor(private router: Router, private dataStorageService: DataStorageService, private authService: AuthService){}
+
+  ngOnInit(): void {
+    this.userSub = this.authService.user.subscribe(user => {
+      this.isAuthenticated = !!user // = !user ? false : true 
+    });
+  }
 
   onSaveData() {
     this.dataStorageService.storeRecipes();
@@ -20,14 +30,7 @@ export class HeaderComponent {
     this.dataStorageService.fetchRecipes().subscribe();
   }
 
-
-
-  // navRecipesClicked(){
-  //   console.log("recipes clicked")
-  //   this.navUpdated.emit('Recipes');
-  // }
-  // navShoppingListClicked(){
-  //   console.log("shopping list clicked")
-  //   this.navUpdated.emit('Shopping List');
-  // }
+  ngOnDestroy(): void {
+    this.userSub.unsubscribe();
+  }
 }
