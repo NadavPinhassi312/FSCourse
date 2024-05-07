@@ -84,7 +84,7 @@ export class RecipeEditComponent {
       this.router.navigate(['/recipes', this.id])
     }
     else {
-      this.router.navigate([''])
+      this.router.navigate(['/recipes'])
     }
   }
   

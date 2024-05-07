@@ -3,6 +3,7 @@ import { Injectable } from "@angular/core";
 import { catchError, tap } from "rxjs/operators";
 import { BehaviorSubject, throwError } from "rxjs";
 import { User } from "./user.model";
+import { Router } from "@angular/router";
 
 export interface AuthResponseData {
     kind: string,
@@ -19,7 +20,7 @@ export interface AuthResponseData {
 export class AuthService {
     user = new BehaviorSubject<User>(null);
 
-    constructor(private http: HttpClient) { }
+    constructor(private http: HttpClient, private router: Router) { }
     signup(email: string, password: string) {
         return this.http.post<AuthResponseData>('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDQ2_i_Rx55d7hnUZvonGP3i50iqywQ7NU',
             {
@@ -29,7 +30,7 @@ export class AuthService {
             }
         ).pipe(catchError(this.handleError),
             tap(resData => {
-                
+
                 this.handleAuthentication(
                     resData.email,
                     resData.localId,
@@ -39,7 +40,7 @@ export class AuthService {
             })
         );
 
-        
+
     }
 
     login(email: string, password: string) {
@@ -50,7 +51,7 @@ export class AuthService {
                 returnSecureToken: true
             }
         ).pipe(catchError(this.handleError)
-            ,tap(resData => {
+            , tap(resData => {
                 this.handleAuthentication(
                     resData.email,
                     resData.localId,
@@ -58,6 +59,34 @@ export class AuthService {
                     +resData.expiresIn
                 )
             }))
+    }
+
+    autoLogin() {
+        const userData: {
+            email: string,
+            id: string,
+            _token: string,
+            _tokenExpirationDate: string
+        } = JSON.parse(localStorage.getItem('userData'));
+        if (!userData) {
+            return;
+        }
+
+        const loadedUser = new User(
+            userData.email,
+            userData.id,
+            userData._token,
+            new Date(userData._tokenExpirationDate)
+        );
+
+        if (loadedUser.token) {
+            this.user.next(loadedUser);
+        }
+    }
+
+    logout() {
+        this.user.next(null);
+        this.router.navigate(['/auth'])
     }
 
     private handleAuthentication(email: string, userID: string, token: string, expiresIn: number) {
@@ -71,8 +100,9 @@ export class AuthService {
             expirationDate
         )
         this.user.next(user);
+        localStorage.setItem('userData', JSON.stringify(user))
     }
-    
+
 
     private handleError(errorRes: HttpErrorResponse) {
         let errorMessage = 'An unknown error occurred!'
@@ -98,4 +128,5 @@ export class AuthService {
         }
         return throwError(errorMessage)
     }
+
 }

@@ -9,42 +9,23 @@ import { RecipesResolverService } from "./recipes/recipes-resolver.service";
 import { AuthComponent } from "./Auth/auth.component";
 
 const appRoutes: Routes = [
-    {path: '', redirectTo: '/recipes', pathMatch: 'full'},
-    {path: 'recipes', component: RecipesComponent, children: [
-      {path: '', component: RecipesStartComponent},
-      {path: 'new-recipe', component: RecipeEditComponent},
-      {path: ':id/edit', component: RecipeEditComponent, resolve: [RecipesResolverService]},
-      {path: ':id', component: RecipeDetailComponent, resolve: [RecipesResolverService]}
-    ]},
-    {path: 'shopping-list', component: ShoppingListComponent},
-    {path: 'auth', component: AuthComponent},
-    {path: '**', redirectTo: '/recipes'}
-  ]
+  { path: '', redirectTo: '/auth', pathMatch: 'full' },
+  {
+    path: 'recipes', component: RecipesComponent, children: [
+      { path: '', component: RecipesStartComponent },
+      { path: 'new-recipe', component: RecipeEditComponent },
+      { path: ':id/edit', component: RecipeEditComponent, resolve: [RecipesResolverService] },
+      { path: ':id', component: RecipeDetailComponent, resolve: [RecipesResolverService] }
+    ]
+  },
+  { path: 'shopping-list', component: ShoppingListComponent },
+  { path: 'auth', component: AuthComponent },
+  { path: '**', redirectTo: '/recipes' }
+]
 
 @NgModule({
-    imports: [RouterModule.forRoot(appRoutes)],
-    exports: [RouterModule]
+  imports: [RouterModule.forRoot(appRoutes)],
+  exports: [RouterModule]
 })
 
-export class AppRoutingModule{
-
-}
-
-// const appRoutes: Routes = [
-//   { path: '', component: HomeComponent },
-//   { path: 'users', component: UsersComponent, children: [
-//     { path: ':id/:name', component: UserComponent }
-//   ] },
-//   {
-//     path: 'servers',
-//     // canActivate: [AuthGuard],
-//     canActivateChild: [AuthGuard],
-//     component: ServersComponent,
-//     children: [
-//     { path: ':id', component: ServerComponent, resolve: {server: ServerResolver} },
-//     { path: ':id/edit', component: EditServerComponent, canDeactivate: [CanDeactivateGuard] }
-//   ] },
-//   // { path: 'not-found', component: PageNotFoundComponent },
-//   { path: 'not-found', component: ErrorPageComponent, data: {message: 'Page not found!'} },
-//   { path: '**', redirectTo: '/not-found' }
-// ];
+export class AppRoutingModule { }
