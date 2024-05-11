@@ -5,6 +5,7 @@ import { enableDebugTools } from "@angular/platform-browser";
 import { Observable } from "rxjs";
 import { Router } from "@angular/router";
 import { DataStorageService } from "../shared/data-storage.service";
+import { AlertComponent } from "../shared/alert/alert.component";
 
 @Component({
     selector: 'app-auth',
@@ -15,7 +16,7 @@ export class AuthComponent {
     isLoading: boolean = false;
     error: string = null;
 
-    constructor(private authService: AuthService, private router: Router, private dataStorageService: DataStorageService) { }
+    constructor(private authService: AuthService, private router: Router, private dataStorageService: DataStorageService, ) { }
 
     onSwitchMode() {
         this.isLoginMode = !this.isLoginMode;
@@ -47,10 +48,19 @@ export class AuthComponent {
         }, errorMessage => {
             console.log(errorMessage)
             this.error = errorMessage
+            this.showErrorAlert(errorMessage);
             this.isLoading = false;
         }
         )
 
         form.reset();
+    }
+
+    onHandleError() {
+        this.error=null;
+    }
+
+    private showErrorAlert(message: string) {
+        const alrtCmp = new AlertComponent
     }
 }
