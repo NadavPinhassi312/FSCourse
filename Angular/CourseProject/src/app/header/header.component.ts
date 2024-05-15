@@ -21,7 +21,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.userSub = this.authService.user.subscribe(user => {
       this.isAuthenticated = !!user // = !user ? false : true 
     });
-    this.dataStorageService.fetchRecipes().subscribe();
+    if (this.isAuthenticated){
+      this.dataStorageService.fetchRecipes().subscribe();
+    }
   }
 
   onSaveData() {
