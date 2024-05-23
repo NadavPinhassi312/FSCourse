@@ -3,7 +3,6 @@ import { ShoppingListService } from '../shopping-list.service';
 import { NgForm } from '@angular/forms';
 import { Ingredient } from '../../shared/ingredient.model';
 import { Subscription } from 'rxjs';
-import { NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-shopping-edit',
